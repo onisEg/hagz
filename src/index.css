@@ -31,7 +31,8 @@ a {
 }
 
 .input-group-text{
-    padding-right: unset;
+    padding-left: 1rem;
+    padding-right: 0.1rem !important;
 }
 
 .inputStyle:focus {
@@ -73,7 +74,4 @@ border: 1px solid rgb(206, 206, 206) !important;
 .errorMessage {
     margin: 5px;
 
-}
-.input-group-text {
-    padding-left: unset;
 }

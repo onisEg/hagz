@@ -60,9 +60,6 @@ border: unset !important;
     color: rgba(131, 145, 161, 1)
 }
 
-.input-group-text {
-    background-color: red !important;
-}
 
 .registerForm span{
     padding-right: unset;
