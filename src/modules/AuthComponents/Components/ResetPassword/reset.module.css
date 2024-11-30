@@ -1,0 +1,115 @@
+.resetWrapper {
+    padding-inline: 5.5rem;
+    padding-block: 6rem;
+}
+
+
+.iconBtn {
+    border: unset;
+    height: unset;
+    padding: unset;
+    background-color: unset;
+  }
+.title {
+    margin-bottom: 2rem;
+}
+
+
+.title p {
+    color: rgba(73, 73, 73, 0.6);
+}
+.title h2 {
+    color: rgba(73, 73, 73, 1);
+    font-weight: 700;
+}
+
+
+.loginWrapper {
+    padding-inline: 5rem;
+    padding-block: 6.6rem;
+}
+
+.inputStyle {
+    background-color: rgba(247, 247, 247, 1);
+    border: unset;
+
+    &&::placeholder {
+        color: rgba(131, 145, 161, 1)
+    }
+
+
+    
+}
+
+
+.inputText  {
+    border-right: 5px solid rgba(131, 145, 161, 1);
+}
+
+
+.captionText{
+    color: rgba(73, 73, 73, 0.6);
+    font-weight: 400;
+}
+
+
+.registerForm input {
+border: unset !important;
+}
+.registerForm i {
+    color: rgba(131, 145, 161, 1)
+}
+
+.input-group-text {
+    background-color: red !important;
+}
+
+.registerForm span{
+    padding-right: unset;
+}
+
+
+
+
+
+
+.formWrapper {
+
+
+    & ::placeholder {
+        padding-inline: 8px;
+        border-left: 1px solid rgba(131, 145, 161, 1);
+
+    }
+}
+
+
+.inputGroup i {
+    color: rgba(131, 145, 161, 1)
+}
+
+.forgetPassword a{
+    display: inline-block;
+    color: rgba(99, 102, 241, 1);
+    margin-bottom: 2.3rem;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+.errorMessage{
+    margin: 5px;
+}
+
+@media only screen and (max-width: 400px) {
+    .resetWrapper {
+      padding-inline: 1.5rem;
+    }
+  }
+@media only screen and (min-width: 401px) and (max-width : 500px){
+    .resetWrapper {
+      padding-inline: 3rem;
+    }
+  }
+
+  .authBtn {
+    margin-top: 2rem;
+  }

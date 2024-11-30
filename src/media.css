@@ -1,0 +1,10 @@
+@media only screen and (max-width: 720px) {
+    .authBtnStyle {
+      padding-inline: 8rem;
+    }
+  }
+@media only screen and (min-width: 300px) and (max-width:721px) {
+    .authBtnStyle {
+      padding-inline: 7rem;
+    }
+  }
