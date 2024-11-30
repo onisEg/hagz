@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
+
+body{
+    font-family: "Archivo", sans-serif;
+
+}
+a {
+    text-decoration: none;
+}
+
+.inputStyle {
+    background-color: rgba(247, 247, 247, 1);
+    border: unset;
+    padding: 0.7rem;
+    border-radius: 5px !important;
+
+    &&::placeholder {
+        color: rgba(131, 145, 161, 1)
+    }
+
+    
+}
+.input-group.password{
+    margin-top: 1.9rem;
+}
+
+
+.inputIcons {
+    color: rgb(122, 134, 148);
+    font-size: 21px;
+}
+
+.input-group-text{
+    padding-right: unset;
+}
+
+.inputStyle:focus {
+background-color: rgba(247, 247, 247, 1) !important;
+box-shadow: unset !important;
+border: 1px solid rgb(206, 206, 206) !important;
+}
+.eyeIcon {
+    z-index: 999;
+}
+
+
+.authBtnStyle{
+    background-color: rgba(79, 70, 229, 1);
+    color: white
+    ;
+    padding-inline: 16rem;
+    padding-block: 13px;
+    font-weight: 500;
+    border-radius: 10px;
+    border: unset;
+}
+
+.authTitle {
+    margin-bottom: 2rem;
+}
+
+
+
+.authTitle h2 {
+    color: rgba(73, 73, 73, 1);
+    font-weight: 700;
+}
+.authTitle p{
+    color: rgba(73, 73, 73, 0.6);
+
+}
+
+.errorMessage {
+    margin: 5px;
+
+}
+.input-group-text {
+    padding-left: unset;
+}
