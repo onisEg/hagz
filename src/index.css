@@ -23,6 +23,9 @@ a {
 .input-group.password{
     margin-top: 1.9rem;
 }
+.countryCol , .phoneCol {
+    margin-top: 1.9rem;
+}
 
 
 .inputIcons {

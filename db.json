@@ -1,10 +1,13 @@
 {
   "user": [
     {
-      "userRole": "Admin",
-      "name": "anas",
-      "password": "anas2020",
-      "email": "anas12@gmail.com"
+      "id": "53ec",
+      "userName": "sarah88",
+      "email": "sarah.h.nashaat@gmail.com",
+      "country": "Egypt",
+      "phoneNumber": "01121789902",
+      "password": "Etshy@5",
+      "confirmPassword": "Etshy@5"
     }
   ]
 }

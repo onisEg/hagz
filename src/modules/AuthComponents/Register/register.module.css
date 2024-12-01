@@ -1,0 +1,95 @@
+
+
+.registerForm input {
+border: unset !important;
+}
+
+
+.input-group-text {
+    background-color: red !important;
+}
+
+.registerForm span{
+    padding-right: unset;
+}
+
+.loginBtn {
+    background-color: unset;
+    border: unset;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 10px;
+    color: rgba(99, 102, 241, 1);
+}
+
+.registerBtn {
+    width: 34.2rem;
+    color: white;
+    background-color: rgba(79, 70, 229, 1);
+    font-weight: 700;
+    margin-bottom: 2.2rem;
+    padding-block: 0.6rem;
+    border-radius: 8px;
+    border: unset;
+    margin-top: 1.4rem;
+}
+
+.formCaption {
+    margin-bottom: 2.25rem;
+   
+}
+
+.formWrapper {
+    padding-inline: 2.8rem;
+    padding-block: 1.8rem;
+    
+
+       & input {
+        padding-block: 0.75rem;
+
+        }
+
+    & ::placeholder {
+        padding-inline: 8px;
+        border-left: 1px solid rgba(131, 145, 161, 1);
+
+    }
+}
+
+
+
+.errorMessage {
+    margin-bottom: 10px;
+}
+
+
+
+  .flexInputs{
+    display: flex;
+
+}
+.rightInputs {
+    margin-right: 6.2rem;
+}
+
+.iconBtn {
+    border: unset;
+    height: unset;
+    padding: unset;
+    background-color: unset;
+  }
+
+  @media only screen and (max-width: 750px) {
+    .formCaption {
+        margin-top: 5rem;
+    }
+    .registerBtn {
+     width: 20rem;
+    }
+  }
+@media only screen and (min-width: 401px) and (max-width : 500px){
+    .loginWrapper {
+      padding-inline: 3rem;
+    }
+  }
