@@ -7,6 +7,7 @@ import { ForgetPasswordData } from '../../../../interfaces/interfaces';
 import AuthBtn from '../AuthBtn/AuthBtn';
 import AuthTitle from '../AuthTitle/AuthTitle';
 import { emailValidation } from '../../../../validations/validation';
+import { Link } from 'react-router-dom';
 
 
 
@@ -55,6 +56,12 @@ const{
         
         </div>
           </div>
+
+        <div className={styles.loginBtn}>
+        <Link to={'/'}>
+          login ?
+          </Link>
+        </div>
 
 
 

@@ -1,0 +1,8 @@
+.headerWrapper{
+    background-color: rgba(199, 210, 254, 1);
+    border-radius: 10px;
+    padding-inline: 0.5rem;
+}
+.headerSvg{
+    margin-right: 4rem;
+}

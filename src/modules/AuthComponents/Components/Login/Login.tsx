@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import styles from './login.module.css'
 import { LuEye } from "react-icons/lu";
 import { IoLockClosedOutline } from "react-icons/io5";
@@ -10,11 +10,13 @@ import { LoginFormData } from '../../../../interfaces/interfaces';
 import { emailValidation } from '../../../../validations/validation';
 import AuthBtn from '../AuthBtn/AuthBtn';
 import AuthTitle from '../AuthTitle/AuthTitle';
+import axios from 'axios';
+import toast from 'react-hot-toast';
 
 
 
 export default function Login() {
-
+const navigate = useNavigate()
 
   
 const{ 
@@ -28,7 +30,14 @@ const{
 
   const onSubmitHandler =(data:LoginFormData)=>{
 
-      console.log(data);
+     axios.get(`http://localhost:3000/user`).then(()=>{
+      toast.success('welcome back !')
+      navigate('/dashboard')
+      
+     }).catch((error)=> {
+      console.log(error);
+      
+     })
       
   }
   const [value, toggleFunction] = useToggle(false);
@@ -82,7 +91,6 @@ const{
   }
 
 
-{/* <i  aria-label="password-toggle"   className={ "fa-solid fa-eye position-absolute end-0 top-50 translate-middle confirm"}></i> */}
 <span className='sr-only'>{value ? 'hide  password' : 'show  password'}</span>
 
 </button></div>
@@ -92,8 +100,11 @@ const{
 </div>
 </div>
 
-<div className={`${styles.forgetPassword} text-end`}>
-    <Link to={'forget-password'}>Forget password ?</Link>
+
+<div className={`${styles.forgetPassword} d-flex justify-content-between`} >
+   <Link className={styles.registerLink} to={'/'}>Register </Link>
+
+    <Link className={`${styles.forgetLink}`} to={'forget-password'}>Forget password ?</Link>
 
 
     </div>
