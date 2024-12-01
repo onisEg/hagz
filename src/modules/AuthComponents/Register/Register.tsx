@@ -32,14 +32,13 @@ const navigate =useNavigate()
     
 
 
-  let{
+  const{
     register,
     formState:{errors},
     watch,
     handleSubmit,
     trigger,
-    setValue
-  
+   
     
   
   }=useForm <RegisterData>({ mode:'onChange'})
