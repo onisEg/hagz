@@ -84,10 +84,17 @@ border: unset !important;
 
 .forgetPassword a{
     display: inline-block;
-    color: rgba(99, 102, 241, 1);
     margin-bottom: 2.3rem;
     margin-top: 1rem;
     font-weight: 500;
+}
+
+.forgetLink {
+    color: rgba(99, 102, 241, 1);
+}
+
+.registerLink {
+    color: rgba(163, 163, 163, 1);
 }
 .errorMessage{
     margin: 5px;

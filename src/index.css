@@ -75,3 +75,95 @@ border: 1px solid rgb(206, 206, 206) !important;
     margin: 5px;
 
 }
+
+
+.side-bar-container .ps-sidebar-container {
+    padding: 30px 0;
+    background-color: transparent;
+    height: 100vh !important;
+    
+    }
+    .side-bar-container {
+      height: 100vh !important;
+    }
+    
+    .sideContain{
+      background-color: rgba(31, 38, 62, 1);
+    border-top-right-radius: 58px;
+    z-index: 999999;
+    position: sticky;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    align-self: flex-start;
+    height: 100vh !important;
+    
+    }
+    .ps-sidebar-root {
+      border-right-style: unset !important;
+    }
+    
+    .ps-menuitem-root {
+        color: white !important;
+    }
+    .mobile-side .ps-menuitem-root {
+      color: black !important;
+    }
+    
+    .ps-menuitem-root:not(:first-child):hover .ps-menu-button {
+        background-color: rgba(0, 146, 77, 0.1) !important;
+    }
+    .ps-menuitem-root:first-child:hover .ps-menu-button{
+    background-color: transparent !important;
+    }
+    .ps-menu-button {
+        transition: all 0.25s;
+    }
+    .sideBarLogo .ps-menu-icon {
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+    .navbar {
+        background-color: rgba(248, 249, 251, 1);
+    }
+    .ps-sidebar-root .ps-sidebar-container  .ps-menu-icon img{
+      width: 90px !important;
+    }
+    
+    
+    
+    
+    .ps-sidebar-root.ps-collapsed .ps-menuitem-root.myLogo {
+        margin: 0 -1.5rem;
+    }
+    .navbarProfileImage {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+    }
+
+    .searchInputNavbar {
+        width: 70%;
+        border-radius: 8px;
+        border: unset;
+        padding-inline: 1rem;
+    }
+    .searchInputNavbar::placeholder {
+        padding-inline: 1.2rem;
+    }
+    .searchInputNavbar:focus {
+        border: unset;
+        outline: unset;
+    }
+
+    .searchInputNavbar:focus +.searchIcon{
+       display: none;
+    }
+    .profileInfo {
+        margin-bottom: 1.5rem;
+    }
+    .dropdown-menu[data-bs-popper] {
+        right: 0 !important;
+        left: unset;
+    }

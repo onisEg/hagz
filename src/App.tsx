@@ -3,6 +3,9 @@ import AuthLayout from "./shareComponents/AuthLayout/Components/AuthLayout/AuthL
 import Login from "./modules/AuthComponents/Components/Login/Login"
 import ForgetPassword from './modules/AuthComponents/Components/ForgetPassword/ForgetPassword';
 import ResetPassword from "./modules/AuthComponents/Components/ResetPassword/ResetPassword";
+import { Toaster } from "react-hot-toast";
+import MasterLayout from './shareComponents/MasterLayout/MasterLayout';
+import Dashboard from './modules/Dashboard/Dashboard';
 
 export default function App() {
 
@@ -24,12 +27,25 @@ export default function App() {
   
   
   ]
+    } ,
+    {
+      path : '/dashboard' , element : <MasterLayout/>,
+      children : [
+        {
+          index:true , element: <Dashboard/>
+        }
+      ]
     }
+
   ])
 
 
 
  return <>
+ <Toaster
+  position="top-center"
+  reverseOrder={false}
+/>
  <RouterProvider router={router}/>
  
  </>
