@@ -127,16 +127,21 @@ border: 1px solid rgb(206, 206, 206) !important;
     .navbar {
         background-color: rgba(248, 249, 251, 1);
     }
+    .ps-sidebar-root.ps-collapsed .ps-sidebar-container  .ps-menu-icon img{
+      width: 100px !important;
+    }
+    
+    .navbar {
+        background-color: rgba(248, 249, 251, 1);
+    }
     .ps-sidebar-root .ps-sidebar-container  .ps-menu-icon img{
-      width: 90px !important;
+      width: 250px !important;
     }
     
     
     
     
-    .ps-sidebar-root.ps-collapsed .ps-menuitem-root.myLogo {
-        margin: 0 -1.5rem;
-    }
+    
     .navbarProfileImage {
         width: 3rem;
         height: 3rem;
@@ -147,7 +152,8 @@ border: 1px solid rgb(206, 206, 206) !important;
         width: 70%;
         border-radius: 8px;
         border: unset;
-        padding-inline: 1rem;
+        padding-inline: 1.8rem;
+        padding-block: 0.5rem;
     }
     .searchInputNavbar::placeholder {
         padding-inline: 1.2rem;
@@ -166,4 +172,13 @@ border: 1px solid rgb(206, 206, 206) !important;
     .dropdown-menu[data-bs-popper] {
         right: 0 !important;
         left: unset;
+    }
+
+    .input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+      transition: background-color 0s 600000s, color 0s 600000s !important;
+    }
+
+    .myLogo {
+        margin-right: unset !important;
     }

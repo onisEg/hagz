@@ -35,8 +35,8 @@ return <>
 <div className='side-bar-container fullScreenSlider'>
 <Sidebar    collapsed={isCollapsed} >
   <Menu>
-      <div className="logo my-5 mx-4">
-      <MenuItem className='myLogo'  onClick={toggleCollapsing}  icon={<img src={logo} alt="football logo"   />} > </MenuItem>
+      <div className="logo my-5 ">
+      <MenuItem className='myLogo d-flex justify-content-center'  onClick={toggleCollapsing}  icon={<img src={logo} alt="football logo"   />} > </MenuItem>
       <span className='sr-only'>{isCollapsed ? 'click to open side bar' : ' click to close side bar'} </span>
       </div> 
       <div className="my-5 fixed-icons">
