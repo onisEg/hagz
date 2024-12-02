@@ -1,3 +1,5 @@
+
+
 @import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap');
 
 body{
@@ -184,4 +186,91 @@ border: 1px solid rgb(206, 206, 206) !important;
 
     .myLogo {
         margin-right: unset !important;
+    }
+
+    .side-bar-container .ps-sidebar-container {
+        overflow: hidden;
+    }
+
+    .info {
+        padding-block: 2rem;
+        padding-inline: 1.5rem;
+        border-radius: 10px;
+    }
+
+    .info h4 , .info p ,  .courtSlider h4{
+        font-size: 16px;
+        font-weight: 500;
+        color: rgba(82, 82, 82, 1)
+    }
+    .info h4 {
+        min-width:150px ;
+        margin-bottom: 40px;
+    }
+
+    .userInfo {
+        margin-top: 24px;
+    }
+
+    .courtSlider {
+        border-radius: 10px;
+        background-color: rgba(248, 249, 251);
+        border: 1px solid rgb(200, 200, 200);
+        cursor: pointer;
+        width: 70%;
+
+    }
+    .totalDeactive {
+        background-color: rgba(248, 249, 251);
+        border: 1px solid rgb(200, 200, 200);
+        text-align: center;
+        padding-inline: 4.8rem;
+        padding-block: 1.3rem;
+        border-radius: 10px;
+        
+        & h3,span {
+            margin-bottom: 30px;
+            font-size: 20px;
+            font-weight: 500;
+            color: rgba(82, 82, 82, 1);
+            min-width: 10rem;
+        }
+    }
+
+    .sliderWrapper {
+        margin-top: 24px;
+
+    }
+  .courtImage img  {
+    width: 56px;
+    height: 56px;
+    border: 2px solid rgba(49, 46, 129, 1);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .courtFlex p {
+font-weight: 400  ;
+font-size: 13px;
+min-width: 100px;
+margin-block: auto;
+color: rgba(82, 82, 82, 1);
+
+}
+.courtFlex {
+    overflow: hidden;
+}
+
+  .courtSlider h4 {
+    padding-block: 1rem;
+  }
+
+  .slick-initialized {
+    overflow: hidden;
+    }
+    
+
+
+    .courtSlider {
+        max-width: 750px;
     }

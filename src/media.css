@@ -2,9 +2,41 @@
     .authBtnStyle {
       padding-inline: 8rem;
     }
+    .userFlex {
+      display: block !important;
+      width: 50%;
+      margin-block: 30px;
+    }
+.sliderWrapper {
+  display: block !important;
+}
+.totalDeactive {
+  width: 70%;
+  padding-inline: unset;
+  margin-top: 20px;
+}
   }
 @media only screen and (min-width: 300px) and (max-width:721px) {
     .authBtnStyle {
       padding-inline: 7rem;
     }
+  }
+
+  @media only screen and (min-width: 400px) and (max-width:1000px) {
+   
+     .info {
+      padding-inline: unset;
+     }
+     .courtSlider {
+      max-width: 400px;
+  }
+  }
+  @media only screen and (min-width: 1000px) and (max-width:1100px) {
+   
+    .info h4{
+      min-width: unset;
+    }
+    .courtSlider {
+      max-width: 500px ;
+  }
   }
