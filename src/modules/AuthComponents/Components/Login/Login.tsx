@@ -12,13 +12,15 @@ import AuthBtn from '../AuthBtn/AuthBtn';
 import AuthTitle from '../AuthTitle/AuthTitle';
 import axios from 'axios';
 import toast from 'react-hot-toast';
+import { useState } from 'react';
 
 
 
 export default function Login() {
+
+  const [isValid, setIsValid] = useState(null)
 const navigate = useNavigate()
 
-  
 const{ 
 	formState:{errors,isSubmitting },
 	register  ,
@@ -28,17 +30,46 @@ const{
 
 
 
-  const onSubmitHandler =(data:LoginFormData)=>{
+  const onSubmitHandler = async (data:LoginFormData) =>{
 
-     axios.get(`http://localhost:3000/user`).then(()=>{
-      toast.success('welcome back !')
-      navigate('/dashboard')
+
+  await axios.get( `http://localhost:3000/user` ).then((resp)=>{
+
+    
+   
+    if(resp.data.find(e => e.email === data.email )){
+      setIsValid(true)
+     
       
-     }).catch((error)=> {
-      console.log(error);
-      
-     })
-      
+    }
+  else {
+    toast.error('please enter valid email')
+    setIsValid(false)
+  }
+    
+    if(resp.data.find(e => e.password === data.password )){
+     setIsValid(true)
+       
+    }
+  else {
+
+   
+    toast.error('please enter valid password')
+  }
+
+  if(resp.data.find(e => e.password === data.password && e.email === data.email )) {
+    toast.success('welcome back')
+    navigate('/dashboard')
+  }
+
+    
+  }).catch((err)=>{
+    console.log(err);
+    
+  })
+
+    
+
   }
   const [value, toggleFunction] = useToggle(false);
   return <>
@@ -51,6 +82,7 @@ const{
 
         </div>
         <div className={styles.formWrapper}>
+        
         <form onSubmit={handleSubmit(onSubmitHandler)}>
         <div >
         
@@ -102,7 +134,7 @@ const{
 
 
 <div className={`${styles.forgetPassword} d-flex justify-content-between`} >
-   <Link className={styles.registerLink} to={'/'}>Register </Link>
+   <Link className={styles.registerLink} to={'/register'}>Register </Link>
 
     <Link className={`${styles.forgetLink}`} to={'forget-password'}>Forget password ?</Link>
 

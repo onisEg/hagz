@@ -6,6 +6,7 @@ import ResetPassword from "./modules/AuthComponents/Components/ResetPassword/Res
 import { Toaster } from "react-hot-toast";
 import MasterLayout from './shareComponents/MasterLayout/MasterLayout';
 import Dashboard from './modules/Dashboard/Dashboard';
+import Register from "./modules/AuthComponents/Register/Register";
 
 export default function App() {
 
@@ -22,6 +23,9 @@ export default function App() {
     
     {
       path:"reset-password" , element : <ResetPassword/>
+    },
+    {
+      path:"register" , element : <Register/>
     },
 
   

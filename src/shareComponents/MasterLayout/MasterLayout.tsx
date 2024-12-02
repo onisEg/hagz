@@ -8,7 +8,7 @@ return <>
         <div className='sideContain' >
           <SideBar />
         </div>
-        <div className='w-100 mx-3'>
+        <div className='w-100 mx-3 masterLayout'>
         <Navbar/>
             <Outlet/>
         </div>
