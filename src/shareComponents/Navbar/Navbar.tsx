@@ -22,7 +22,7 @@ export default function Navbar() {
 
 <div className="btn-group">
 <button className="btn  btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-Anas
+{localStorage.getItem('userName') ? localStorage.getItem('userName') : 'user' }
 </button>
 <ul className="dropdown-menu drop text-center">
 <Link to={'/'}>Logout</Link>

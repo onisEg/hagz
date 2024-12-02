@@ -1,70 +1,67 @@
 {
   "user": [
     {
-      "id": "53ec",
-      "userName": "sarah88",
+      "id": "cfbb",
+      "userName": "sarah9",
       "email": "sarah.h.nashaat@gmail.com",
-      "country": "Egypt",
+      "country": "newisland",
       "phoneNumber": "01121789902",
-      "password": "Etshy@5",
-      "confirmPassword": "Etshy@5"
+      "password": "Etshy@33",
+      "confirmPassword": "Etshy@33"
+    }
+  ],
+  "userInfo": [
+    {
+      "id": 1,
+      "title": "Total users",
+      "number": 3500,
+      "icon": " fa-solid fa-arrow-trend-up"
+    },
+    {
+      "id": 2,
+      "title": "Total Courts",
+      "number": 500,
+      "icon": " fa-solid fa-arrow-trend-up"
+    },
+    {
+      "id": 3,
+      "title": "Number of leaves",
+      "number": 24,
+      "icon": " fa-solid fa-arrow-trend-down"
+    },
+    {
+      "id": 4,
+      "title": "Newly joined users",
+      "number": 24,
+      "icon": " fa-solid fa-arrow-trend-up"
+    },
+    {
+      "id": 5,
+      "title": "Total Active",
+      "number": 1056,
+      "icon": null
+    }
+  ],
+  "newCourts": [
+    {
+      "title": "Sports Avenue",
+      "image": "./src//assets/images/person.jpg"
+    },
+    {
+      "title": "Sports Avenue",
+      "image": "./src//assets/images/court.jpg"
+    },
+    {
+      "title": "Sports Avenue",
+      "image": "./src//assets/images/court2.jpg"
+    },
+    {
+      "title": "Sports Avenue",
+      "image": "./src//assets/images/court2.jpg"
+    },
+    {
+      "title": "Sports Avenue",
+      "image": "./src//assets/images/court2.jpg"
     }
   ]
-  
-,
-"userInfo" : [
-  {
-    "id":1,
-    "title" : "Total users" ,
-    "number" : 3500,
-    "icon" : " fa-solid fa-arrow-trend-up"
-  },
-  {"id":2,
-    "title" : "Total Courts" ,
-    "number" : 500,
-    "icon" : " fa-solid fa-arrow-trend-up"
-  },
-  {"id":3,
-    "title" : "Number of leaves" ,
-    "number" : 24,
-    "icon" : " fa-solid fa-arrow-trend-down"
-  },
-  {"id":4,
-    "title" : "Newly joined users" ,
-    "number" : 24,
-    "icon" : " fa-solid fa-arrow-trend-up"
-  },
-  {"id":5,
-    "title" : "Total Active" ,
-    "number" : 1056,
-    "icon" :null
-  }
-
-]
-,
-"newCourts" : [
-  {
-    "title" : "Sports Avenue",
-    "image" : "./src//assets/images/person.jpg"
-  },
-  {
-    "title" : "Sports Avenue",
-    "image" : "./src//assets/images/court.jpg"
-  },
-  {
-    "title" : "Sports Avenue",
-    "image" : "./src//assets/images/court2.jpg"
-  },
-  {
-    "title" : "Sports Avenue",
-    "image" : "./src//assets/images/court2.jpg"
-  },
-  {
-    "title" : "Sports Avenue",
-    "image" : "./src//assets/images/court2.jpg"
-  }
- 
-]
-  
 }
-

@@ -18,7 +18,7 @@ import { useState } from 'react';
 
 export default function Login() {
 
-  const [isValid, setIsValid] = useState(null)
+  const [isValid, setIsValid] = useState<boolean>(false)
 const navigate = useNavigate()
 
 const{ 

@@ -54,6 +54,7 @@ const navigate =useNavigate()
     axios.post(`http://localhost:3000/user`,data).then((resp)=>{
         console.log(resp);
         toast.success('register succussefully !')
+        localStorage.setItem('userName',data?.userName)
         navigate('/')
     }).catch((err)=>{
         console.log(err);
