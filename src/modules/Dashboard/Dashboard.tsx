@@ -3,16 +3,15 @@ import dashboardImg from '../../assets/images/amico.png'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CourtSlider from "../CourtSlider/CourtSlider";
+import { Link } from "react-router-dom";
+import { info, request, topUser } from "../../interfaces/interfaces";
 export default function Dashboard() {
 
-     interface info  {
-        title : string,
-        id : number,
-        icon : string,
-        number : number
-    }
+
 
     const [userInfo, setUserInfo] = useState([])
+    const [topUsers, setTopUsers] = useState([])
+    const [pendingRequests, setPendingRequests] = useState([])
 
 
     const getUserInfo = ()=> {
@@ -26,9 +25,33 @@ export default function Dashboard() {
         })
     }
 
+    const getTopUsers=()=>{
+        axios.get(`http://localhost:3000/topUsers`).then((resp)=>{
+            console.log(resp.data);
+            setTopUsers(resp.data)
+            
+        }).catch((error)=>{
+            console.log(error);
+            
+        })
+
+    }
+    const getPendingRequests=()=>{
+        axios.get(`http://localhost:3000/pendingRequests`).then((resp)=>{
+            console.log(resp.data);
+            setPendingRequests(resp.data)
+            
+        }).catch((error)=>{
+            console.log(error);
+            
+        })
+
+    }
 
     useEffect(()=>{
         getUserInfo()
+        getTopUsers()
+        getPendingRequests()
     },[])
 return <>
 
@@ -62,6 +85,61 @@ return <>
         <span>200</span>
     </div>
         </div>
+
+
+<div className="d-flex justify-content-between tablesFlex align-items-start ">
+<div className="dashboardTable table-responsive-md  ">
+        <table className="table text-center  ">
+  <thead>
+    <tr className="tableHeadTr">
+      <th className="firstTh" scope="col">Top users</th>
+      <th scope="col">ID number</th>
+      <th scope="col">Matches played</th>
+      <th className="lastTh" scope="col">Matches cancelled</th>
+    </tr>
+  </thead>
+  <tbody>
+{
+    topUsers?.map((topUser:topUser)=>    <tr>
+    <td scope="row">
+
+
+      <div className="d-flex align-items-center">
+      <span className="rank">
+         {topUser.rank}
+      </span>
+      <div className="user topUsersImage d-flex align-items-center">
+          <img src={topUser.image} alt="" className="mx-2" />
+          <p className="my-0">Ahmed</p>
+      </div>
+      </div>
+
+    </td>
+    <td>{topUser.IdNumber}</td>
+    <td>{topUser.playedMatches}</td>
+    <td>{topUser.cancelledMatches}</td>
+  </tr>)
+}
+
+  </tbody>
+</table>
+        </div>
+
+        <div className="pendingRequest border  ">
+            <p className=" m-0">Pending Request</p>
+            {
+
+                pendingRequests.map((req:request)=>   <div className="request d-flex justify-content-between">
+                <div className="topUsersImage d-flex justify-content-between">
+                <span className="me-1">{req.rank}</span>
+                <img src={req.image} alt="aa" />
+                </div>
+                <span className="pendingTitle mx-2">{req.title}</span>
+                <span className="decoratedLink"><Link to={''} className="ms-2">View</Link></span>
+            </div>)
+            }
+        </div>
+</div>
 </div>
 
 

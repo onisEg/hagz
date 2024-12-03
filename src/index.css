@@ -224,7 +224,7 @@ border: 1px solid rgb(206, 206, 206) !important;
         background-color: rgba(248, 249, 251);
         border: 1px solid rgb(200, 200, 200);
         text-align: center;
-        padding-inline: 4.8rem;
+        padding-inline: 4rem;
         padding-block: 1.3rem;
         border-radius: 10px;
         
@@ -244,6 +244,14 @@ border: 1px solid rgb(206, 206, 206) !important;
   .courtImage img  {
     width: 56px;
     height: 56px;
+    border: 2px solid rgba(49, 46, 129, 1);
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .topUsersImage img {
+    width: 30px;
+    height: 30px;
     border: 2px solid rgba(49, 46, 129, 1);
     border-radius: 50%;
     overflow: hidden;
@@ -274,3 +282,87 @@ color: rgba(82, 82, 82, 1);
     .courtSlider {
         max-width: 750px;
     }
+
+    .table>tbody>tr:nth-child(odd)>td,
+    .table>tbody>tr:nth-child(odd)>th {
+      background-color: rgba(248, 249, 251, 1);
+      padding-block: 1.2rem !important;
+    }
+
+.dashboardTable {
+    width: 70%;
+    overflow-x: auto;
+  
+}
+
+.tablesFlex {
+    margin-top: 24px;
+
+}
+
+
+tbody, td, tfoot, th, thead, tr {
+    border-style: unset !important;
+    font-weight: 500;
+    color: rgba(82, 82, 82, 1) !important;
+    min-width: 200px;
+
+ }
+
+ .table th {
+    background-color: rgb(226, 229, 235) !important;
+ }
+
+ th {
+
+    padding-block: 14px !important;
+    padding-inline: 15px !important;
+ }
+
+ 
+
+ .firstTh {
+
+border-start-start-radius: 10px;
+border-bottom-left-radius: 10px;
+}
+
+.lastTh {
+    border-top-right-radius: 10px;
+border-bottom-right-radius: 10px;
+}
+
+
+table {
+    border-collapse:separate; 
+    border-spacing: 0 1.5rem;
+  }
+.pendingRequest {
+    margin-top: 1.5rem;
+    border-radius: 10px;
+    background-color: rgba(248, 249, 251, 1);
+    padding-inline: 2.2rem;
+}
+
+
+
+.pendingRequest p {
+    margin-top: 1rem !important;
+    margin-bottom: 24px !important;
+}
+
+
+
+  .pendingTitle {
+    font-size: 14px;
+    min-width: 100px
+  }
+  .request{
+    margin-bottom: 24px;
+  }
+
+  .decoratedLink a{
+    text-decoration: underline;
+    color: rgba(79, 70, 229, 1) !important; 
+    font-weight: 400;
+  }
