@@ -11,7 +11,7 @@ export default function Navbar() {
   
     
  return <>
- <div className="profileInfo d-flex align-items-center justify-content-between  p-2 navbar rounded mt-3">
+ <div className="profileInfo  container-fluid d-flex align-items-center justify-content-between  p-2 navbar rounded mt-3">
     <input type="text" placeholder='Search Here' className='searchInputNavbar'/>
     <CiSearch className='position-absolute mx-3 searchIcon' size={'1.2rem'}/>
 

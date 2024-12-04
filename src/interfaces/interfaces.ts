@@ -31,7 +31,8 @@ export interface LoginFormData {
     image : string,
     IdNumber : string,
     playedMatches : number
-    cancelledMatches : number
+    cancelledMatches : number,
+    id:string
 }
  export interface request  {
     rank : string,

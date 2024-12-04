@@ -1,42 +1,32 @@
 {
-  "user": [
-    {
-      "id": "cfbb",
-      "userName": "sarah9",
-      "email": "sarah.h.nashaat@gmail.com",
-      "country": "newisland",
-      "phoneNumber": "01121789902",
-      "password": "Etshy@33",
-      "confirmPassword": "Etshy@33"
-    }
-  ],
+  "user": [],
   "userInfo": [
     {
-      "id": 1,
+      "id": "1",
       "title": "Total users",
       "number": 3500,
       "icon": " fa-solid fa-arrow-trend-up"
     },
     {
-      "id": 2,
+      "id": "2",
       "title": "Total Courts",
       "number": 500,
       "icon": " fa-solid fa-arrow-trend-up"
     },
     {
-      "id": 3,
+      "id": "3",
       "title": "Number of leaves",
       "number": 24,
       "icon": " fa-solid fa-arrow-trend-down"
     },
     {
-      "id": 4,
+      "id": "4",
       "title": "Newly joined users",
       "number": 24,
       "icon": " fa-solid fa-arrow-trend-up"
     },
     {
-      "id": 5,
+      "id": "5",
       "title": "Total Active",
       "number": 1056,
       "icon": null
@@ -45,143 +35,155 @@
   "newCourts": [
     {
       "title": "Sports Avenue",
-      "image": "./src//assets/images/person.jpg"
+      "image": "./src//assets/images/person.jpg",
+      "id": "c463"
     },
     {
       "title": "Sports Avenue",
-      "image": "./src//assets/images/court.jpg"
+      "image": "./src//assets/images/court.jpg",
+      "id": "9039"
     },
     {
       "title": "Sports Avenue",
-      "image": "./src//assets/images/court2.jpg"
+      "image": "./src//assets/images/court2.jpg",
+      "id": "aca4"
     },
     {
       "title": "Sports Avenue",
-      "image": "./src//assets/images/court2.jpg"
+      "image": "./src//assets/images/court2.jpg",
+      "id": "1357"
     },
     {
       "title": "Sports Avenue",
-      "image": "./src//assets/images/court2.jpg"
+      "image": "./src//assets/images/court2.jpg",
+      "id": "c606"
     }
   ],
   "topUsers": [
     {
       "rank": "#1",
       "image": "./src//assets/images/person.jpg",
-      "name" : "Ahmed",
-      "IdNumber" :"#123546",
-      "playedMatches" : "180",
-      "cancelledMatches" : 2
+      "name": "Ahmed",
+      "IdNumber": "#123546",
+      "playedMatches": "180",
+      "cancelledMatches": 2,
+      "id": "bb6b"
     },
     {
       "rank": "#2",
       "image": "./src//assets/images/person.jpg",
-      "name" : "Ahmed",
-      "IdNumber" :"#123546",
-      "playedMatches" : "180",
-      "cancelledMatches" : 2
+      "name": "Ahmed",
+      "IdNumber": "#123546",
+      "playedMatches": "180",
+      "cancelledMatches": 2,
+      "id": "b4ee"
     },
     {
       "rank": "#3",
       "image": "./src//assets/images/person.jpg",
-      "name" : "Ahmed",
-      "IdNumber" :"#123546",
-      "playedMatches" : "180",
-      "cancelledMatches" : 2
+      "name": "Ahmed",
+      "IdNumber": "#123546",
+      "playedMatches": "180",
+      "cancelledMatches": 2,
+      "id": "42c9"
     },
     {
       "rank": "#4",
       "image": "./src//assets/images/person.jpg",
-      "name" : "Ahmed",
-      "IdNumber" :"#123546",
-      "playedMatches" : "180",
-      "cancelledMatches" : 2
+      "name": "Ahmed",
+      "IdNumber": "#123546",
+      "playedMatches": "180",
+      "cancelledMatches": 2,
+      "id": "c5b4"
     },
     {
       "rank": "#5",
       "image": "./src//assets/images/person.jpg",
-      "name" : "Ahmed",
-      "IdNumber" :"#123546",
-      "playedMatches" : "180",
-      "cancelledMatches" : 2
+      "name": "Ahmed",
+      "IdNumber": "#123546",
+      "playedMatches": "180",
+      "cancelledMatches": 2,
+      "id": "645d"
     },
     {
       "rank": "#6",
       "image": "./src//assets/images/person.jpg",
-      "name" : "Ahmed",
-      "IdNumber" :"#123546",
-      "playedMatches" : "180",
-      "cancelledMatches" : 2
+      "name": "Ahmed",
+      "IdNumber": "#123546",
+      "playedMatches": "180",
+      "cancelledMatches": 2,
+      "id": "e487"
     },
     {
       "rank": "#7",
       "image": "./src//assets/images/person.jpg",
-      "name" : "Ahmed",
-      "IdNumber" :"#123546",
-      "playedMatches" : "180",
-      "cancelledMatches" : 2
+      "name": "Ahmed",
+      "IdNumber": "#123546",
+      "playedMatches": "180",
+      "cancelledMatches": 2,
+      "id": "2836"
     }
   ],
   "pendingRequests": [
     {
       "rank": "#1",
-      "image":"./src//assets/images/court.jpg",
-      "title" : "Sports Avenue"
-  
+      "image": "./src//assets/images/court.jpg",
+      "title": "Sports Avenue",
+      "id": "cb26"
     },
     {
       "rank": "#2",
-      "image":"./src//assets/images/court.jpg",
-      "title" : "Sports Avenue"
-  
+      "image": "./src//assets/images/court.jpg",
+      "title": "Sports Avenue",
+      "id": "adca"
     },
     {
       "rank": "#3",
       "image": "./src//assets/images/court.jpg",
-      "title" : "Sports Avenue"
-  
+      "title": "Sports Avenue",
+      "id": "1f19"
     },
     {
       "rank": "#4",
-      "image":"./src//assets/images/court.jpg",
-      "title" : "Sports Avenue"
-  
+      "image": "./src//assets/images/court.jpg",
+      "title": "Sports Avenue",
+      "id": "4f6a"
     },
     {
       "rank": "#5",
-      "image":"./src//assets/images/court.jpg",
-      "title" : "Sports Avenue"
-  
+      "image": "./src//assets/images/court.jpg",
+      "title": "Sports Avenue",
+      "id": "da6c"
     },
     {
       "rank": "#6",
-      "image":"./src//assets/images/court.jpg",
-      "title" : "Sports Avenue"
-  
+      "image": "./src//assets/images/court.jpg",
+      "title": "Sports Avenue",
+      "id": "a92e"
     },
     {
       "rank": "#7",
-      "image":"./src//assets/images/court.jpg",
-      "title" : "Sports Avenue"
-  
+      "image": "./src//assets/images/court.jpg",
+      "title": "Sports Avenue",
+      "id": "3087"
     },
     {
       "rank": "#8",
-      "image":"./src//assets/images/court.jpg",
-      "title" : "Sports Avenue"
-  
+      "image": "./src//assets/images/court.jpg",
+      "title": "Sports Avenue",
+      "id": "4c04"
     },
     {
       "rank": "#9",
-      "image":"./src//assets/images/court.jpg",
-      "title" : "Sports Avenue"
-  
+      "image": "./src//assets/images/court.jpg",
+      "title": "Sports Avenue",
+      "id": "a8e7"
     },
     {
       "rank": "#10",
-      "image":"./src//assets/images/court.jpg",
-      "title" : "Sports Avenue"
-  
+      "image": "./src//assets/images/court.jpg",
+      "title": "Sports Avenue",
+      "id": "cde8"
     }
   ]
 }

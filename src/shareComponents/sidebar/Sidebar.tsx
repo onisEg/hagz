@@ -9,6 +9,8 @@ import { HiOutlineUsers } from "react-icons/hi2";
 import { PiUsersThree } from "react-icons/pi";
 import { IoSettingsOutline } from "react-icons/io5";
 import { RiFunctionAddLine } from "react-icons/ri";
+import { IoIosArrowForward } from "react-icons/io";
+import { IoIosArrowBack } from "react-icons/io";
 
 
 export default function SideBar() {
@@ -16,7 +18,7 @@ export default function SideBar() {
 
 
 
-    const [isCollapsed, setIsCollapsed] = useState(true)
+    const [isCollapsed, setIsCollapsed] = useState(false)
 
     const toggleCollapsing = ()=>{
       setIsCollapsed(!isCollapsed)
@@ -36,7 +38,10 @@ return <>
 <Sidebar    collapsed={isCollapsed} >
   <Menu>
       <div className="logo my-5 ">
-      <MenuItem className='myLogo d-flex justify-content-center'  onClick={toggleCollapsing}  icon={<img src={logo} alt="football logo"   />} > </MenuItem>
+      
+
+      <MenuItem className='myLogo d-flex justify-content-center'   onClick={toggleCollapsing}  icon={<img src={logo} alt="football logo"   />} >{isCollapsed ? <IoIosArrowForward className='position-absolute end-0 top-0 me-2 sideArrow' color='white' />  : <IoIosArrowBack   className='position-absolute end-0 top-0 me-2 sideArrow' color='white'/>
+      }</MenuItem>
       <span className='sr-only'>{isCollapsed ? 'click to open side bar' : ' click to close side bar'} </span>
       </div> 
       <div className="my-5 fixed-icons">

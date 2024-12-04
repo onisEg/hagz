@@ -8,8 +8,10 @@ return <>
         <div className='sideContain' >
           <SideBar />
         </div>
-        <div className='w-100 mx-3 masterLayout'>
-        <Navbar/>
+        <div className='w-100 mx-3 masterLayout overflow-hidden'>
+            <div className="container-fluid">
+            <Navbar/>
+            </div>
             <Outlet/>
         </div>
 

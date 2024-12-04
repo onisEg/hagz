@@ -31,6 +31,8 @@
       max-width: 400px;
   }
   }
+
+
   @media only screen and (min-width: 1000px) and (max-width:1100px) {
    
     .info h4{
@@ -38,5 +40,17 @@
     }
     .courtSlider {
       max-width: 500px ;
+  }
+  }
+
+
+  @media only screen and (min-width: 1400px) {
+    .courtSlider {
+      max-width: unset;
+     
+
+  }
+  .totalDeactive,.pendingRequest   {
+width: 25%;
   }
   }
