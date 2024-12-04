@@ -1,5 +1,24 @@
 {
-  "user": [],
+  "user": [
+    {
+      "id": "cfbb",
+      "userName": "sarah9",
+      "email": "sarah.h.nashaat@gmail.com",
+      "country": "newisland",
+      "phoneNumber": "01121789902",
+      "password": "Etshy@33",
+      "confirmPassword": "Etshy@33"
+    },
+    {
+      "id": "98b3",
+      "userName": "anas",
+      "email": "anasabdo704@gmail.com",
+      "country": "Oman",
+      "phoneNumber": "01084394834",
+      "password": "0115201598",
+      "confirmPassword": "0115201598"
+    }
+  ],
   "userInfo": [
     {
       "id": "1",
