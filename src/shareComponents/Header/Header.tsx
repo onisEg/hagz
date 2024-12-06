@@ -1,14 +1,16 @@
+import { header } from '../../interfaces/interfaces'
 import styles from './header.module.css'
-export default function Header({title,img,svg}) {
+
+ const Header:React.FC<header> = ({title,img,svg,from}) =>{
 return <>
 
 <div className={styles.headerWrapper}>
-<div className="d-flex justify-content-between align-items-center">
+<div className="d-flex justify-content-between align-items-center position-relative ">
 <h2>
     {title}
 </h2>
-    <div className='d-flex align-items-center'>
-    <div className={styles.headerSvg}>
+    <div className={from == 'dashboard' ? 'd-flex align-items-center ' :'svgWrapper'}>
+    <div className={from !='dashboard' ? `${styles.headerSvg}` : `${styles.headerSvgDashboard}`}>
     {svg}
     </div>
     <img src={img} alt="" />
@@ -18,3 +20,4 @@ return <>
 </div>
 </>
 }
+export default Header

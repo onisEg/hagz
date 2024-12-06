@@ -51,7 +51,7 @@ return <>
     <MenuItem  icon = {<LuLayoutDashboard  fontSize={'1.3rem'}  />} component={<NavLink to='/dashboard'/>}> Dashboard <span className='sr-only'>navigate to dashboard</span> </MenuItem>
 
 
-    <MenuItem icon={<MdPendingActions fontSize={'1.3rem'}/>} component={<NavLink to='/dashboard'/>}> Pending Requests <span className='sr-only'>navigate to Pending Requests </span></MenuItem>
+    <MenuItem icon={<MdPendingActions fontSize={'1.3rem'}/>} component={<NavLink to='pending-request'/>}> Pending Requests <span className='sr-only'>navigate to Pending Requests </span></MenuItem>
   <MenuItem icon={<PiCourtBasketball  fontSize={'1.3rem'} />
 } component={<NavLink to='/dashboard'/>}> Manage Courts  <span className='sr-only'>navigate to Manage Courts</span></MenuItem>
   <MenuItem icon = {<HiOutlineUsers />

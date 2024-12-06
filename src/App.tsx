@@ -7,6 +7,7 @@ import { Toaster } from "react-hot-toast";
 import MasterLayout from './shareComponents/MasterLayout/MasterLayout';
 import Dashboard from './modules/Dashboard/Dashboard';
 import Register from "./modules/AuthComponents/Register/Register";
+import PendingRequest from "./modules/PendingRequest/PendingRequest";
 
 export default function App() {
 
@@ -33,11 +34,13 @@ export default function App() {
   ]
     } ,
     {
-      path : '/dashboard' , element : <MasterLayout/>,
-      children : [
+      path : '' , element : <MasterLayout/>,
+      children : [        {
+          path:'dashboard' , element: <Dashboard/>
+        },
         {
-          index:true , element: <Dashboard/>
-        }
+          path:'pending-request' , element : <PendingRequest/>
+        },
       ]
     }
 

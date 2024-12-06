@@ -1,3 +1,5 @@
+import { ReactElement } from "react";
+
 export interface LoginFormData {
     email: string;
     password: string;
@@ -39,4 +41,24 @@ export interface LoginFormData {
     image : string,
     title:string
 
+}
+ export interface pendingRequestInfo  {
+  courtName : string,
+    image : string,
+    
+    Price:string,
+
+    Description:string,
+    ownerName : string,
+    category : string,
+    status : string,
+    idNumber : string
+
+}
+
+export interface header {
+  title : string,
+  img : string,
+  svg: ReactElement,
+  from?:string
 }

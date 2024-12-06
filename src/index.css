@@ -170,15 +170,21 @@ border: 1px solid rgb(206, 206, 206) !important;
         padding-inline: 1.8rem;
         padding-block: 0.5rem;
     }
-    .searchInputNavbar::placeholder {
+
+    .searchTable {
+        padding-inline: 1.8rem;
+        padding-block: 0.5rem;
+    }
+    
+    .searchInputNavbar::placeholder ,.searchTable::placeholder {
         padding-inline: 1.2rem;
     }
-    .searchInputNavbar:focus {
+    .searchInputNavbar:focus , .searchTable:focus {
         border: unset;
         outline: unset;
     }
 
-    .searchInputNavbar:focus +.searchIcon{
+    .searchInputNavbar:focus +.searchIcon   ,.searchTable:focus +.searchTableIcon{
        display: none;
     }
     .profileInfo {
@@ -378,3 +384,34 @@ table {
     color: rgba(79, 70, 229, 1) !important; 
     font-weight: 400;
   }
+  .active {
+    background-color: rgba(0, 146, 71, 0.1);
+  }
+
+  .searchingTable{
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+.pendingTableArrow {
+color: rgba(0, 0, 0, 1);
+cursor: pointer;
+}
+
+.pendingT th {
+    padding-inline-end: unset !important;
+}
+
+.pendingStatus{
+    color: white;
+    border-radius: 20px;
+    padding-block: 10px;
+    padding-inline: 1.5rem;
+    font-weight: 400;
+}
+
+.pendimage img {
+    width: 56px;
+    height: 56px;
+    border-radius: 8px;
+}

@@ -2,7 +2,19 @@
     background-color: rgba(199, 210, 254, 1);
     border-radius: 10px;
     padding-inline: 0.5rem;
+    margin-top: 24px;
+
+     & h2 {
+        font-weight: 700;     }
 }
 .headerSvg{
     margin-right: 4rem;
+    position: absolute;
+    right: 55%;
+    bottom: 0;
+}
+
+.headerSvgDashboard {
+    margin-right: 4rem;
+
 }
