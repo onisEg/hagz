@@ -171,8 +171,11 @@ border: 1px solid rgb(206, 206, 206) !important;
         padding-block: 0.5rem;
     }
 
-    .searchTable {
+    .searchTable  {
         padding-inline: 1.8rem;
+        padding-block: 0.5rem;
+    }
+    .dropTable {
         padding-block: 0.5rem;
     }
     
@@ -414,4 +417,138 @@ cursor: pointer;
     width: 56px;
     height: 56px;
     border-radius: 8px;
+}
+
+.actionsIcon {
+    color: rgba(49, 46, 129, 1);
+    margin-inline: 10px;
+  
+}
+
+.actionsIcon.eye {
+width: 1.2rem;
+height: 1.2rem;
+border: 1px solid rgba(49, 46, 129, 1);
+border-radius: 50%;
+}
+.pendingDropDown:active{
+    border: unset !important;
+    outline: unset !important;
+  }
+  .pendingDropDown:focus{
+    border: unset !important;
+    outline: unset !important;
+  }
+  
+  .pendingDropDown:focus-within{
+    border: unset !important;
+    outline: unset !important;
+  }
+  
+  .dropdown-toggle::after {
+    display: none;
+  }
+
+
+  .coolinput {
+    display: flex;
+    flex-direction: column;
+    position: static;
+
+  }
+  
+  .coolinput label.text {
+    font-size: 0.75rem;
+    position: relative;
+    top: 0.5rem;
+    margin: 0 0 0 7px;
+    padding: 0 3px;
+    background: white;
+    width: fit-content;
+    color: rgb(168, 168, 168);
+  }
+  
+  .coolinput input[type=text].input {
+    padding: 11px 10px;
+    font-size: 0.75rem;
+    border: 2px #818CF8 solid;
+    border-radius: 5px;
+    background: #e8e8e8;
+  }
+  
+  .coolinput input[type=text].input:focus {
+    outline: none;
+  }
+  .modalInputs{
+    color: rgba(82, 82, 82, 1);
+  }
+
+  .modalInputs:disabled {
+    background-color: white !important;
+  }
+
+.headerInfo {
+    background-color: rgb(226, 229, 235) !important;
+    color: rgba(82, 82, 82, 1);
+}
+.titleOfHeader {
+    font-size: 24px;
+    font-weight: 400;
+
+}
+
+.cancelModal{
+    left: 20px;
+    cursor: pointer;
+}
+
+.ownerImg img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.owner {
+    padding-inline: 127px;
+    padding-bottom: 143px;
+    padding-top: 50px;
+}
+
+.modalBtn {
+    min-width: 180px !important;
+}
+.ownerBtns {
+    margin-top: 24px;
+}
+
+.recject-accept{
+    margin-top: 104px;
+}
+
+.acceptBtn {
+  background-color: rgba(79, 70, 229, 1);
+  color: white;
+  margin-left: 40px;
+}
+.acceptBtn:hover {
+  background-color: #818CF8;
+}
+
+.recject-accept button {
+  padding-inline: 27px;
+  padding-block: 0.5rem;
+}
+
+.paginationLinks {
+  cursor: pointer;
+}
+
+.paginationDropDown {
+  background-color: rgba(245, 245, 245, 1);
+  border-radius: 20px;
+}
+.prevent-select {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }

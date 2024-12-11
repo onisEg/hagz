@@ -8,6 +8,7 @@ import MasterLayout from './shareComponents/MasterLayout/MasterLayout';
 import Dashboard from './modules/Dashboard/Dashboard';
 import Register from "./modules/AuthComponents/Register/Register";
 import PendingRequest from "./modules/PendingRequest/PendingRequest";
+import CourtList from "./modules/CourtList/CourtList";
 
 export default function App() {
 
@@ -40,6 +41,9 @@ export default function App() {
         },
         {
           path:'pending-request' , element : <PendingRequest/>
+        },
+        {
+          path:'court-list' , element : <CourtList/>
         },
       ]
     }

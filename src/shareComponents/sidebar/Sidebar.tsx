@@ -53,11 +53,11 @@ return <>
 
     <MenuItem icon={<MdPendingActions fontSize={'1.3rem'}/>} component={<NavLink to='pending-request'/>}> Pending Requests <span className='sr-only'>navigate to Pending Requests </span></MenuItem>
   <MenuItem icon={<PiCourtBasketball  fontSize={'1.3rem'} />
-} component={<NavLink to='/dashboard'/>}> Manage Courts  <span className='sr-only'>navigate to Manage Courts</span></MenuItem>
+} component={<NavLink to='/court-list'/>}> Manage Courts  <span className='sr-only'>navigate to Manage Courts</span></MenuItem>
   <MenuItem icon = {<HiOutlineUsers />
-} component={<NavLink to='/dashboard'/>}> Court Owners <span className='sr-only'>navigate to categories list</span></MenuItem> 
-  <MenuItem icon={<PiUsersThree   fontSize={'1.3rem'}/>} component={<NavLink to='/dashboard'/>}> Users  <span className='sr-only'>navigate to users</span></MenuItem>
-  <MenuItem icon={<IoSettingsOutline   fontSize={'1.3rem'}/>} component={<NavLink to='/dashboard'/>}> Settings <span className='sr-only'>navigate to settings</span> </MenuItem>
+} component={<NavLink to='/'/>}> Court Owners <span className='sr-only'>navigate to categories list</span></MenuItem> 
+  <MenuItem icon={<PiUsersThree   fontSize={'1.3rem'}/>} component={<NavLink to='/'/>}> Users  <span className='sr-only'>navigate to users</span></MenuItem>
+  <MenuItem icon={<IoSettingsOutline   fontSize={'1.3rem'}/>} component={<NavLink to='/'/>}> Settings <span className='sr-only'>navigate to settings</span> </MenuItem>
   
 
  
@@ -65,7 +65,7 @@ return <>
 
 
 
-<MenuItem icon={<RiFunctionAddLine  fontSize={'1.3rem'} />} component={<NavLink to='/dashboard'/>}> Add admins <span className='sr-only'>navigate to add admins</span> </MenuItem>
+<MenuItem icon={<RiFunctionAddLine  fontSize={'1.3rem'} />} component={<NavLink to='/'/>}> Add admins <span className='sr-only'>navigate to add admins</span> </MenuItem>
 
 
     </div>

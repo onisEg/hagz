@@ -52,7 +52,8 @@ export interface LoginFormData {
     ownerName : string,
     category : string,
     status : string,
-    idNumber : string
+    idNumber : string,
+    id :number
 
 }
 
