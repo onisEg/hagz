@@ -1,6 +1,6 @@
 # hagz
 # changes for test
 
-npm i 
-npm run dev
+### npm i 
+### npm run dev
 
