@@ -17,6 +17,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { BsImage } from "react-icons/bs";
 import DeleteConfirm from "../../shareComponents/DeleteConfirm/DeleteConfirm";
 import Pagination from "../Pagination/Pagination";
+import { Link } from "react-router-dom";
 
 const CourtList = () => {
 
@@ -27,10 +28,10 @@ const CourtList = () => {
     const [sort, setSort] = useState('')
     const [show, setShow] = useState(false);
     const [showDelete, setShowDelete] = useState(false);
-    const [ownerName, setOwnerName] = useState('');
-    const [courtName, setCourtName] = useState('');
-    const [courtImage, setCourtImage] = useState('');
-    const [idNum, setIdNum] = useState('');
+    const [ownerName] = useState('');
+    const [courtName] = useState('');
+    const [courtImage] = useState('');
+    const [idNum] = useState('');
     const [deletedId, setDeleteId] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const [postsPerPage] = useState(5);
@@ -43,15 +44,7 @@ const CourtList = () => {
     const handleClose = () => {setShow(false);
       setShowDelete(false)
     }
-    const handleShow = (courtName:string,ownerName:string,img:string,idNumber:string,deletedId:string) => {
-      setShow(true);
-      setCourtImage(img)
-      setCourtName(courtName)
-      setOwnerName(ownerName)
-      setIdNum(idNumber)
-      setDeleteId(deletedId)
-
-    }
+ 
 
 
   const handleDelete =(id:string)=>{
@@ -237,9 +230,11 @@ return <>
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item onClick={()=>handleShow(info.courtName,info.ownerName,info.image,info.idNumber,info.id.toLocaleString())}>
-            {" "}
+          <Dropdown.Item>
+            <Link to={`/court-details/${info.id}`}>
+            
             <MdOutlineRemoveRedEye  size={'1.2rem'} className="actionsIcon eye"/>View
+            </Link>
             <span className="sr-only">click to view</span>
           </Dropdown.Item>
           <Dropdown.Item
@@ -266,7 +261,8 @@ return <>
 
 
 
-    <Modal  size="xl" show={show} onHide={handleClose}>
+    <Modal aria-labelledby="contained-modal-title-vcenter"
+      centered  size="xl" show={show} onHide={handleClose}>
       <Modal.Header className="justify-content-center headerInfo pb-1 " >
         <Modal.Title className="modalTitle"><span className="titleOfHeader position-relative">Request details</span></Modal.Title>
         <span onClick={handleClose} className="position-absolute  cancelModal"><i className="fa-solid fa-xmark fa-1x"></i></span>

@@ -266,7 +266,8 @@ return <>
 
 
 
-    <Modal  size="xl" show={show} onHide={handleClose}>
+    <Modal aria-labelledby="contained-modal-title-vcenter"
+      centered  size="xl" show={show} onHide={handleClose}>
       <Modal.Header className="justify-content-center headerInfo pb-1 " >
         <Modal.Title className="modalTitle"><span className="titleOfHeader position-relative">Request details</span></Modal.Title>
         <span onClick={handleClose} className="position-absolute  cancelModal"><i className="fa-solid fa-xmark fa-1x"></i></span>

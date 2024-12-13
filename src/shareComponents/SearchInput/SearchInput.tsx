@@ -52,7 +52,7 @@ const SearchInput :React.FC<search> =({setSearch,sortingFunction,filteredItem,se
       </button>
     }
       <Dropdown.Menu>
-        <Dropdown.Item onClick={()=>sortingFunction(from !=='court' ? "status=Pending" : 'status=Active')}>{from !== 'court' ? 'Pending' : 'Active'}</Dropdown.Item>
+        <Dropdown.Item onClick={()=>sortingFunction(from !=='court' ? "status=Approved" : 'status=Active')}>{from !== 'court' ? 'Approved' : 'Active'}</Dropdown.Item>
         <Dropdown.Item onClick={()=>sortingFunction(from !=='court' ? "status=Pending" : 'status=Deactive')} >{from !== 'court' ? 'Pending' : 'Deactive'}</Dropdown.Item>
         {from !== 'court' ?         <Dropdown.Item onClick={()=>sortingFunction("status=Rejected")}>Rejected</Dropdown.Item>
  :''}

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Sidebar, Menu, MenuItem } from 'react-pro-sidebar';
 import {  NavLink } from 'react-router-dom';
-import logo from '../../assets/images/logo.png'
+import logo from '../../assets/images/ahjiz.png'
 import { LuLayoutDashboard } from "react-icons/lu";
 import { MdPendingActions } from "react-icons/md";
 import { PiCourtBasketball } from "react-icons/pi";

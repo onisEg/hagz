@@ -9,6 +9,7 @@ import Dashboard from './modules/Dashboard/Dashboard';
 import Register from "./modules/AuthComponents/Register/Register";
 import PendingRequest from "./modules/PendingRequest/PendingRequest";
 import CourtList from "./modules/CourtList/CourtList";
+import CourtDetails from "./modules/CourtDetails/CourtDetails";
 
 export default function App() {
 
@@ -44,6 +45,9 @@ export default function App() {
         },
         {
           path:'court-list' , element : <CourtList/>
+        },
+        {
+          path:'court-details/:id' , element : <CourtDetails/>
         },
       ]
     }

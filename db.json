@@ -416,28 +416,6 @@
       "status": "Active",
       "idNumber": "#323996",
       "id": "4"
-    },
-    {
-      "courtName": "HandBall Aveneu",
-      "image": "./src//assets/images/court2.jpg",
-      "Price": 100,
-      "Description": "Basket ball",
-      "ownerName": "basketball club",
-      "category": "basket ball",
-      "status": "Deactive",
-      "idNumber": "#323996",
-      "id": "5"
-    },
-    {
-      "courtName": "HandBall Aveneu",
-      "image": "./src//assets/images/court2.jpg",
-      "Price": 100,
-      "Description": "Basket ball",
-      "ownerName": "handball club",
-      "category": "basket ball",
-      "status": "Active",
-      "idNumber": "#323996",
-      "id": "6"
     }
   ]
 }

@@ -50,7 +50,7 @@ border: 1px solid rgb(206, 206, 206) !important;
 }
 
 
-.authBtnStyle{
+.authBtnStyle,.saveBtn{
     background-color: rgba(79, 70, 229, 1);
     color: white
     ;
@@ -133,7 +133,7 @@ border: 1px solid rgb(206, 206, 206) !important;
         background-color: rgba(248, 249, 251, 1);
     }
     .ps-sidebar-root.ps-collapsed .ps-sidebar-container  .ps-menu-icon img{
-      width: 100px !important;
+      width: 60px !important;
     }
     
     .navbar {
@@ -551,4 +551,30 @@ border-radius: 50%;
   -webkit-user-select: none; /* Safari */
   -ms-user-select: none; /* IE 10 and IE 11 */
   user-select: none; /* Standard syntax */
+}
+
+.courtTitle{
+  margin-top: 32px;
+}
+
+.myTabs {
+  background-color: #E2E5EB;
+  border-radius: 30px;
+  padding-block: 0.3rem;
+  width: 75%;
+  margin: auto;
+  padding-inline: 62px;
+}
+.nav .nav-link{
+  color: #525252 !important;
+}
+.nav .active{
+  background-color: #4F46E5 !important;
+  color: white !important;
+  padding-block: 20px;
+  padding-inline: 47px;
+  border-radius: 30px;
+}
+.tab-content>.active {
+  background-color: white;
 }
