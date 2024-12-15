@@ -374,17 +374,6 @@
   ],
   "courtList": [
     {
-      "courtName": "Sports Aveneu",
-      "image": "./src//assets/images/court2.jpg",
-      "Price": 950,
-      "Description": "Basket ball",
-      "ownerName": "Avenue club",
-      "category": "basket ball",
-      "status": "Active",
-      "idNumber": "#323996",
-      "id": "1"
-    },
-    {
       "courtName": "Football Aveneu",
       "image": "./src//assets/images/court2.jpg",
       "Price": 20,
@@ -393,7 +382,15 @@
       "category": "hand ball",
       "status": "Deactive",
       "idNumber": "#423996",
-      "id": "2"
+      "id": "2",
+      "registrationNumber": "95432687125",
+      "location": "Alseeb, Oman",
+      "data": {
+        "ownerName": "Avenue clubz",
+        "location": "Alseeb, Oman",
+        "idNumber": "#4239788",
+        "registrationNumber": "95432687125"
+      }
     },
     {
       "courtName": "Soccer Aveneu",
@@ -403,11 +400,19 @@
       "ownerName": "splashes",
       "category": "basket ball",
       "status": "Deactive",
-      "idNumber": "#123996",
-      "id": "3"
+      "idNumber": "#323996s",
+      "id": "3",
+      "registrationNumber": "95432687125",
+      "location": "Alseeb, Oman",
+      "data": {
+        "courtName": "Soccer Avenes",
+        "location": "Alseeb, Oman",
+        "idNumber": "",
+        "registrationNumber": "95432687125"
+      }
     },
     {
-      "courtName": "Paddle Aveneu",
+      "courtName": "Ahmed",
       "image": "./src//assets/images/court2.jpg",
       "Price": 400,
       "Description": "football yard",
@@ -415,7 +420,93 @@
       "category": "basket ball",
       "status": "Active",
       "idNumber": "#323996",
-      "id": "4"
+      "id": "4",
+      "registrationNumber": "95432687125",
+      "location": "Alseeb, Oman",
+      "data": {
+        "courtName": "Paddle Aveneuee",
+        "location": "Alseeb, Oman",
+        "idNumber": "#323996e",
+        "registrationNumber": "95432687125"
+      }
+    }
+  ],
+  "courtHistory": [
+    {
+      "userName": "Ahmed",
+      "idNumber": "#423996",
+      "amountPaid": "180 OMR",
+      "date": "12/10/24",
+      "playedTimes": "90 Mins",
+      "appProfit": "180 OMR",
+      "image": "./src//assets/images/person.jpg",
+      "id" : 1
+    },
+    {
+      "userName": "Ibrahim",
+      "idNumber": "#123996",
+      "amountPaid": "200 OMR",
+      "date": "12/10/24",
+      "playedTimes": "105 Mins",
+      "appProfit": "180 OMR",
+      "image": "./src//assets/images/person.jpg",
+      "id" : 2
+
+    },
+    {
+      "userName": "Omar",
+      "idNumber": "#223996",
+      "amountPaid": "120 OMR",
+      "date": "12/10/24",
+      "playedTimes": "75 Mins",
+      "appProfit": "180 OMR",
+      "image": "./src//assets/images/person.jpg",
+      "id" : 3
+
+    },
+    {
+      "userName": "Omar",
+      "idNumber": "#223996",
+      "amountPaid": "120 OMR",
+      "date": "12/10/24",
+      "playedTimes": "75 Mins",
+      "appProfit": "180 OMR",
+      "image": "./src//assets/images/person.jpg",
+      "id" : 4
+
+    },
+    {
+      "userName": "Omar",
+      "idNumber": "#223996",
+      "amountPaid": "120 OMR",
+      "date": "12/10/24",
+      "playedTimes": "75 Mins",
+      "appProfit": "180 OMR",
+      "image": "./src//assets/images/person.jpg",
+      "id" : 5
+
+    },
+    {
+      "userName": "Omar",
+      "idNumber": "#223996",
+      "amountPaid": "120 OMR",
+      "date": "12/10/24",
+      "playedTimes": "75 Mins",
+      "appProfit": "180 OMR",
+      "image": "./src//assets/images/person.jpg",
+      "id" : 6
+
+    },
+    {
+      "userName": "Omar",
+      "idNumber": "#223996",
+      "amountPaid": "120 OMR",
+      "date": "12/10/24",
+      "playedTimes": "75 Mins",
+      "appProfit": "180 OMR",
+      "image": "./src//assets/images/person.jpg",
+      "id" : 7
+
     }
   ]
 }

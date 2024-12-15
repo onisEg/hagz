@@ -8,7 +8,6 @@ import { pendingRequestInfo } from "../../interfaces/interfaces";
 import NoData from "../../shareComponents/NoData/NoData";
 import SearchInput from "../../shareComponents/SearchInput/SearchInput";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-import { FiEdit } from "react-icons/fi";
 import { FaRegTrashCan } from "react-icons/fa6";
 
 import { IoDocumentOutline } from "react-icons/io5";
@@ -211,7 +210,7 @@ return <>
     </td>
 
     <td><div className="pendimage"><img src={info.image} alt="football yard" /></div></td>
-    <td>{getHighlightedText(info.Price.toString(),searchedKeyword)}</td>
+    <td>{getHighlightedText(info?.Price?.toString(),searchedKeyword)}</td>
     <td>{getHighlightedText(info.Description,searchedKeyword)}</td>
     <td>{getHighlightedText(info.ownerName,searchedKeyword)}</td>
     <td>{getHighlightedText(info.category,searchedKeyword)}</td>
@@ -230,19 +229,13 @@ return <>
         </Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item>
-            <Link to={`/court-details/${info.id}`}>
+       
+            <Link className="infoLink" to={`/court-details/${info.id}`}>
             
             <MdOutlineRemoveRedEye  size={'1.2rem'} className="actionsIcon eye"/>View
             </Link>
             <span className="sr-only">click to view</span>
-          </Dropdown.Item>
-          <Dropdown.Item
-      
-          >
-            <FiEdit  size={'1.2rem'} className="actionsIcon"/>Edit
-            <span className="sr-only">click to edit</span>
-          </Dropdown.Item>
+    
 
           <Dropdown.Item
      onClick={()=>handleDelete(info.id.toLocaleString())} 

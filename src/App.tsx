@@ -10,6 +10,7 @@ import Register from "./modules/AuthComponents/Register/Register";
 import PendingRequest from "./modules/PendingRequest/PendingRequest";
 import CourtList from "./modules/CourtList/CourtList";
 import CourtDetails from "./modules/CourtDetails/CourtDetails";
+import SearcContextProvider from "./Context/SearchContext";
 
 export default function App() {
 
@@ -57,11 +58,13 @@ export default function App() {
 
 
  return <>
- <Toaster
+<SearcContextProvider>
+<Toaster
   position="top-center"
   reverseOrder={false}
 />
  <RouterProvider router={router}/>
+</SearcContextProvider>
  
  </>
 }

@@ -54,7 +54,7 @@ console.log(currentPosts);
 
       
       <Dropdown.Menu>
-{pageNumbers.map((page)=>        <Dropdown.Item  onClick={()=>setCurrentPage(page)} href="#/action-1">{page}</Dropdown.Item>
+{pageNumbers.map((page,indx)=>        <Dropdown.Item key={indx}  onClick={()=>setCurrentPage(page)} href="#/action-1">{page}</Dropdown.Item>
 )} 
       </Dropdown.Menu>
       of {Math.ceil(totalPosts?.length/postsPerPage)} Pages

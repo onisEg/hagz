@@ -326,7 +326,7 @@ tbody, td, tfoot, th, thead, tr {
     border-style: unset !important;
     font-weight: 500;
     color: rgba(82, 82, 82, 1) !important;
-    min-width: 200px;
+    
 
  }
 
@@ -560,7 +560,6 @@ border-radius: 50%;
 .myTabs {
   background-color: #E2E5EB;
   border-radius: 30px;
-  padding-block: 0.3rem;
   width: 75%;
   margin: auto;
   padding-inline: 62px;
@@ -577,4 +576,92 @@ border-radius: 50%;
 }
 .tab-content>.active {
   background-color: white;
+}
+
+.infoLink{
+  padding-block: 0.25rem ;
+  padding-inline: 1rem;
+  color: #212529;
+  width: 100%;
+  display: block;
+}
+
+.infoLink:hover {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.modal{
+  z-index: 999999999;
+}
+.viewBtn {
+  color: #4F46E5;
+  text-decoration: underline;
+}
+
+.viewBtn:active , .viewBtn:hover {
+  color: #4F46E5 !important;
+  border: unset !important;
+}
+
+.courtDetails {
+  width: 35%;
+}
+
+.viewFullScreen {
+  background-color: #FF2C53;
+  color: white;
+  bottom: 10px;
+  left: 10px;
+}
+
+.viewFullScreen:hover {
+  background-color: #FF2C53;
+  color: white;
+
+
+}
+.addressWrapper {
+  margin-top: 23px;
+
+}
+.address{
+  max-width: 150px;
+}
+
+.address p , .phoneInfo p{
+  margin: 0;
+}
+
+
+.gpsImg {
+  background-color: rgb(247, 247, 247);
+}
+
+.gpsIcon {
+  background-color: #3E4954;
+  color: white;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  right: 5px;
+}
+
+.pinkGps {
+  background-color: #450B5A08;
+  color: #450B5A;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+
+}
+
+.telInfo {
+  padding-block: 15px;
+  border-radius: 12px;
+}
+
+.pending {
+  background-color: #FF9F29;
 }

@@ -3,28 +3,69 @@ import pendingImg from '../../assets/images/rafiki.svg'
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { FaEllipsisH } from "react-icons/fa";
 import axios from "axios";
-import { useEffect, useState } from "react";
-import { pendingRequestInfo } from "../../interfaces/interfaces";
+import { ReactNode, useContext, useEffect, useState } from "react";
+import { pendingRequestInfo } from '../../interfaces/interfaces';
 import NoData from "../../shareComponents/NoData/NoData";
 import SearchInput from "../../shareComponents/SearchInput/SearchInput";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FiEdit } from "react-icons/fi";
 import { FaRegTrashCan } from "react-icons/fa6";
 
-import { IoDocumentOutline } from "react-icons/io5";
-import Modal from 'react-bootstrap/Modal';
+
 import Dropdown from "react-bootstrap/Dropdown";
-import { BsImage } from "react-icons/bs";
 import DeleteConfirm from "../../shareComponents/DeleteConfirm/DeleteConfirm";
 import Pagination from "../Pagination/Pagination";
+import ViewModal from "../../shareComponents/ViewModal/ViewModal";
+import { searchContext } from "../../Context/SearchContext";
 
+
+export interface searchCont {
+  pendingInfo : pendingRequestInfo[],
+  postsPerPage:number,
+  currentPost: pendingRequestInfo[],
+  sortingFunction: (param:string)=>void,
+  setSearch : React.Dispatch<React.SetStateAction<string>> ,
+  setPendingInfo :React.Dispatch<React.SetStateAction<pendingRequestInfo[]>>,
+  setFilteredItem :React.Dispatch<React.SetStateAction<string|null|undefined>>,
+  setSearchedItem :React.Dispatch<React.SetStateAction<string>>,
+  setCurrentPage :React.Dispatch<React.SetStateAction<number>>,
+  filteredItem :string|null|undefined,
+  sort : string,
+  currentPage:number,
+  searchedKeyword:string,
+  getHighlightedText:(param:string,param2:string)=>ReactNode
+
+}
 const PendingRequest = () => {
 
-    const [pendingInfo, setPendingInfo] = useState <pendingRequestInfo[]>([])
-    const [searchedKeyword, setSearch] = useState('')
-    const [filteredItem, setFilteredItem] = useState <string|null|undefined>(null)
-    const [searchedItem, setSearchedItem] = useState('')
-    const [sort, setSort] = useState('')
+  const sortedItem = (searchedItem:string,sorting:string)=> {
+    axios.get(`http://localhost:3000/pendingTableInfo?_sort=${searchedItem}&${sorting}`,{
+
+
+    }).then((resp)=>{
+      setPendingInfo(resp.data)
+      if(sorting!=undefined){
+        setFilteredItem(sorting.split('=')[1])
+
+        
+      }
+      else {
+        setFilteredItem(null)
+      }
+      
+
+      setSearchedItem(searchedItem)
+    })
+
+    
+  }
+
+
+  const {pendingInfo,postsPerPage,currentPost,sortingFunction,setSearch,filteredItem,currentPage,searchedKeyword,sort,setPendingInfo,setFilteredItem,setSearchedItem,setCurrentPage,getHighlightedText} = useContext<searchCont>(searchContext)
+
+  
+
+
     const [show, setShow] = useState(false);
     const [showDelete, setShowDelete] = useState(false);
     const [ownerName, setOwnerName] = useState('');
@@ -32,13 +73,9 @@ const PendingRequest = () => {
     const [courtImage, setCourtImage] = useState('');
     const [idNum, setIdNum] = useState('');
     const [deletedId, setDeleteId] = useState('');
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postsPerPage] = useState(5);
-  
 
-    const indexOfLastPost = currentPage * postsPerPage
-    const indexOfFirstPost = indexOfLastPost - postsPerPage
-    const currentPost = pendingInfo?.slice(indexOfFirstPost,indexOfLastPost)
+
+
 
     const handleClose = () => {setShow(false);
       setShowDelete(false)
@@ -63,14 +100,6 @@ const PendingRequest = () => {
 
 
 
-
- const sortingFunction = (sorting:string) =>{
-  sortedItem(searchedItem,sorting)
-  setSort(sorting)
-  console.log(sorting);
-  
-
- }
 const deletePendingRequest = () => {
 
   axios.delete(`http://localhost:3000/pendingTableInfo/${deletedId}`).then((resp)=>{
@@ -93,49 +122,8 @@ const deletePendingRequest = () => {
 }
 
 
-    const getHighlightedText = (text:string, highlight:string) => {
-        if (!highlight.trim()) return text;
-    
-        const regex = new RegExp(`(${highlight})`, 'gi');
-        
-        const parts = text.split(regex);
-    
-        return parts.map((part, index) =>
-          part.toLowerCase() === highlight.toLowerCase() ? (
-            <span key={index} style={{ backgroundColor: 'yellow', fontWeight: 'bold' }}>
-              {part}
-            </span>
-          ) : (
-            part
-          )
-        );
-      };
-    
 
-    const sortedItem = (searchedItem:string,sorting:string)=> {
-      axios.get(`http://localhost:3000/pendingTableInfo?_sort=${searchedItem}&${sorting}`,{
- 
 
-      }).then((resp)=>{
-        setPendingInfo(resp.data)
-        if(sorting!=undefined){
-          setFilteredItem(sorting.split('=')[1])
-
-          
-        }
-        else {
-          setFilteredItem(null)
-        }
-        
-        if(currentPost?.length <=1) {
-          console.log('khlas');
-          
-        }
-        setSearchedItem(searchedItem)
-      })
- 
-      
-    }
 
     useEffect(()=>{
         sortedItem('','')
@@ -218,11 +206,11 @@ return <>
     </td>
 
     <td><div className="pendimage"><img src={info.image} alt="football yard" /></div></td>
-    <td>{getHighlightedText(info.Price.toString(),searchedKeyword)}</td>
+    <td>{getHighlightedText(info.Price?.toString(),searchedKeyword)}</td>
     <td>{getHighlightedText(info.Description,searchedKeyword)}</td>
     <td>{getHighlightedText(info.ownerName,searchedKeyword)}</td>
     <td>{getHighlightedText(info.category,searchedKeyword)}</td>
-    <td ><span className={info.status == 'Approved' ? `pendingStatus bg-success` : info.status == 'Pending' ? `pendingStatus bg-black` : `pendingStatus bg-danger` }>{info.status}</span></td>
+    <td ><span className={info.status == 'Approved' ? `pendingStatus bg-success` : info.status == 'Pending' ? `pendingStatus pending` : `pendingStatus bg-danger` }>{info.status}</span></td>
     <td >
       <div className="d-flex align-items-center">
       {info.idNumber}    <Dropdown>
@@ -264,72 +252,9 @@ return <>
   }
   </tbody>
 
+<ViewModal courtImage={courtImage} idNum={idNum} courtName={courtName} handleClose={handleClose} ownerName={ownerName} show={show}/>
 
-
-    <Modal aria-labelledby="contained-modal-title-vcenter"
-      centered  size="xl" show={show} onHide={handleClose}>
-      <Modal.Header className="justify-content-center headerInfo pb-1 " >
-        <Modal.Title className="modalTitle"><span className="titleOfHeader position-relative">Request details</span></Modal.Title>
-        <span onClick={handleClose} className="position-absolute  cancelModal"><i className="fa-solid fa-xmark fa-1x"></i></span>
-      </Modal.Header>
-      <Modal.Body >
-<div className="d-flex  justify-content-between gap-5">
-<div className="inputs d-flex flex-column justify-content-between w-50">
-<div className="coolinput">
-  <label htmlFor="input" className="text">Name:</label>
-  <input disabled type="text" value={ownerName}  className="form-control modalInputs"/>
-</div>
-      <div className="coolinput">
-  <label htmlFor="input" className="text">CourtName:</label>
-  <input disabled type="text" value={courtName}  className="form-control modalInputs"/>
-</div>
-      <div className="coolinput">
-  <label htmlFor="input" className="text">Submit date:</label>
-  <input disabled type="text" value={'9/7/2024'}  className="form-control modalInputs"/>
-</div>
-      <div className="coolinput">
-  <label htmlFor="input" className="text">Location:</label>
-  <input disabled type="text" value={'Alseeb,oman'}  className="form-control modalInputs"/>
-</div>
-      <div className="coolinput">
-  <label htmlFor="input" className="text">National number:</label>
-  <input disabled type="text" value={'#2356589'}  className="form-control modalInputs"/>
-</div>
-      <div className="coolinput">
-  <label htmlFor="input" className="text">Id number:</label>
-  <input disabled type="text" value={idNum}  className="form-control modalInputs"/>
-</div>
-      <div className="coolinput">
-  <label htmlFor="input" className="text">Registration number:</label>
-  <input disabled type="text" value={'95432687125'}  className="form-control modalInputs"/>
-</div>
-</div>
-
-<div className="owner d-flex flex-column align-items-center">
-<div className="ownerImg">
-<img src={courtImage} alt="" />
-</div>
-<div className="ownerBtns d-flex gap-2 ">
-<button className="btn border modalBtn"><IoDocumentOutline />
-View Document
-</button>
-<button className="btn border modalBtn"><BsImage />
-
-View court photos
-</button>
-</div>
-
-<div className="recject-accept d-flex flex-row ">
-<button className="btn btn-outline-danger" >Rejcet request</button>
-<button className="btn acceptBtn" >Accept request</button>
-</div>
-</div>
-</div>
-
-        
-      </Modal.Body>
-
-    </Modal>
+  
     </>
 
    }

@@ -3,17 +3,31 @@ import dashboardImg from '../../assets/images/amico.png'
 import { useEffect, useState } from "react";
 import axios from "axios";
 import CourtSlider from "../CourtSlider/CourtSlider";
-import { Link } from "react-router-dom";
-import { info, request, topUser } from "../../interfaces/interfaces";
+import { info, pendingRequestInfo, topUser } from "../../interfaces/interfaces";
+import ViewModal from "../../shareComponents/ViewModal/ViewModal";
 export default function Dashboard() {
 
 
 
     const [userInfo, setUserInfo] = useState<info[]>()
     const [topUsers, setTopUsers] = useState<topUser[]>()
-    const [pendingRequests, setPendingRequests] = useState<request[]>()
+    const [pendingRequests, setPendingRequests] = useState<pendingRequestInfo[]>()
+    const [courtName, setCourtName] = useState('');
+    const [courtImage, setCourtImage] = useState('');
+    const [show, setShow] = useState(false);
+    const [ownerName, setOwnerName] = useState('');
+    const [idNum, setIdNum] = useState('');
 
+    const handleShow =(courtName:string,img:string,idNum:string,ownerName:string)=>{
+        setShow(true);
+        setCourtImage(img)
+        setCourtName(courtName)   
+        setIdNum(idNum)
+        setOwnerName(ownerName)
+        }
 
+        const handleClose = () => {setShow(false);
+          }
     const getUserInfo = ()=> {
         axios.get(`http://localhost:3000/userInfo`).then((resp)=>{
             console.log(resp.data);
@@ -37,7 +51,7 @@ export default function Dashboard() {
 
     }
     const getPendingRequests=()=>{
-        axios.get(`http://localhost:3000/pendingRequests`).then((resp)=>{
+        axios.get(`http://localhost:3000/pendingTableInfo`).then((resp)=>{
             console.log(resp.data);
             setPendingRequests(resp.data)
             
@@ -131,19 +145,19 @@ return <>
             <p className=" m-0">Pending Request</p>
             {
 
-                pendingRequests?.map((req:request)=>   <div key={req.rank} className="request d-flex justify-content-between">
+                pendingRequests?.map((req:pendingRequestInfo)=>   <div key={req.idNumber} className="request d-flex justify-content-between">
                 <div className="topUsersImage d-flex justify-content-between">
-                <span className="me-1">{req.rank}</span>
+                <span className="me-1">#{req.id}</span>
                 <img src={req.image} alt="aa" />
                 </div>
-                <span className="pendingTitle mx-2">{req.title}</span>
-                <span className="decoratedLink"><Link to={''} className="ms-2">View</Link></span>
+                <span className="pendingTitle mx-1">{req.courtName}</span>
+                <span className="decoratedLink"><button onClick={()=>{handleShow(req.courtName , req.image ,req.idNumber,req.ownerName)}} className="ms-2 btn viewBtn">View</button></span>
             </div>)
             }
         </div>
 </div>
 </div>
 
-
+<ViewModal courtImage={courtImage} courtName={courtName} show={show} handleClose={handleClose} idNum={idNum} ownerName={ownerName}/>
 </>
 }

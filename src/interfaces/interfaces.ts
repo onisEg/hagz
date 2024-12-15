@@ -36,12 +36,7 @@ export interface LoginFormData {
     cancelledMatches : number,
     id:string
 }
- export interface request  {
-    rank : string,
-    image : string,
-    title:string
 
-}
  export interface pendingRequestInfo  {
   courtName : string,
     image : string,
@@ -53,7 +48,12 @@ export interface LoginFormData {
     category : string,
     status : string,
     idNumber : string,
-    id :number
+    id :number,
+    userName:string,
+    amountPaid:string,
+    date:string,
+    playedTimes:string,
+    appProfit:string
 
 }
 
@@ -62,4 +62,17 @@ export interface header {
   img : string,
   svg: ReactElement,
   from?:string
+}
+
+
+export interface CourtDet {
+  userName:string,
+  idNumber : string,
+  amountPaid : string,
+  date:string,
+  appProfit:string,
+  playedTimes:string,courtName:string,
+  registrationNumber:string,
+  location:string
+
 }
