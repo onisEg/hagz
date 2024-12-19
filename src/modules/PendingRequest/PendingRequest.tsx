@@ -5,10 +5,8 @@ import { FaEllipsisH } from "react-icons/fa";
 import axios from "axios";
 import { ReactNode, useContext, useEffect, useState } from "react";
 import { pendingRequestInfo } from '../../interfaces/interfaces';
-import NoData from "../../shareComponents/NoData/NoData";
 import SearchInput from "../../shareComponents/SearchInput/SearchInput";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
-import { FiEdit } from "react-icons/fi";
 import { FaRegTrashCan } from "react-icons/fa6";
 
 
@@ -166,8 +164,8 @@ return <>
     </thead>
    
 
-   {
-    currentPost?.length ==0 || pendingInfo?.length ==0 ? <NoData/> : <>
+   
+    <>
           <tbody>
   
   {
@@ -230,12 +228,7 @@ return <>
             <MdOutlineRemoveRedEye  size={'1.2rem'} className="actionsIcon eye"/>View
             <span className="sr-only">click to view</span>
           </Dropdown.Item>
-          <Dropdown.Item
-      
-          >
-            <FiEdit  size={'1.2rem'} className="actionsIcon"/>Edit
-            <span className="sr-only">click to edit</span>
-          </Dropdown.Item>
+         
 
           <Dropdown.Item
      onClick={()=>handleDelete(info.id.toLocaleString())} 
@@ -257,7 +250,7 @@ return <>
   
     </>
 
-   }
+   
 
   </table>
           </div>

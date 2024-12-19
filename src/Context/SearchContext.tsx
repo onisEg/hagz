@@ -40,6 +40,8 @@ export default function SearcContextProvider({children}) {
  const sortingFunction = (sorting:string) =>{
   sortedItem(searchedItem,sorting)
   setSort(sorting)
+  console.log("searched",searchedItem);
+  
   console.log(sorting);
   
 

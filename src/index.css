@@ -60,7 +60,15 @@ border: 1px solid rgb(206, 206, 206) !important;
     border-radius: 10px;
     border: unset;
 }
+.saveEdit{
+  background-color: rgba(79, 70, 229, 1);
 
+}
+
+.saveEdit:hover{
+  background-color: rgba(79, 70, 229, 1);
+
+}
 .authTitle {
     margin-bottom: 2rem;
 }
@@ -530,7 +538,7 @@ border-radius: 50%;
   color: white;
   margin-left: 40px;
 }
-.acceptBtn:hover {
+.acceptBtn:hover  {
   background-color: #818CF8;
 }
 
@@ -560,9 +568,8 @@ border-radius: 50%;
 .myTabs {
   background-color: #E2E5EB;
   border-radius: 30px;
-  width: 75%;
+  width: fit-content;
   margin: auto;
-  padding-inline: 62px;
 }
 .nav .nav-link{
   color: #525252 !important;
@@ -664,4 +671,87 @@ border-radius: 50%;
 
 .pending {
   background-color: #FF9F29;
+}
+
+.payIcon{
+  color: #4F46E5;
+  font-size: 3rem;
+}
+
+.pendingPay{
+  width: 75%;
+}
+.payments{
+  width: 40%;
+}
+
+.firstPay{
+  border-radius: 10px;
+}
+
+.firstPay h3{
+  margin-block: 1rem;
+  font-size: 18px;
+  color: #525252;
+}
+
+
+
+.firstPay h4 {
+  font-size: 18px;
+  color: #525252;
+  font-weight: bold;
+}
+
+.pay{
+  padding-block: 0.2rem;
+  padding-inline: 5rem;
+}
+
+.courtInfo{
+  padding-inline: 1.5rem;
+}
+
+.Refunded{
+  color: #FF9F29;
+
+}
+
+.viewTop{
+  cursor: pointer;
+  color: #4F46E5;
+
+}
+
+.settingTabs{
+  border: unset !important;
+}
+.editPen{
+  right: 1rem;
+  color: #4F46E5;
+  cursor: pointer;
+}
+
+.fileUpload{
+  display: none;
+}
+
+.customFileUpload {
+   
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: auto;
+}
+
+.formImage img {
+  width: 90px;
+  height: 90px;
+  cursor: pointer;
+  border-radius: 50%;
+  margin: auto;
 }

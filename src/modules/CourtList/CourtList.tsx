@@ -5,7 +5,6 @@ import { FaEllipsisH } from "react-icons/fa";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { pendingRequestInfo } from "../../interfaces/interfaces";
-import NoData from "../../shareComponents/NoData/NoData";
 import SearchInput from "../../shareComponents/SearchInput/SearchInput";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { FaRegTrashCan } from "react-icons/fa6";
@@ -59,7 +58,6 @@ const CourtList = () => {
  const sortingFunction = (sorting:string) =>{
   sortedItem(searchedItem,sorting)
   setSort(sorting)
-  console.log(sorting);
   
 
  }
@@ -119,10 +117,7 @@ const deletePendingRequest = () => {
           setFilteredItem(null)
         }
         
-        if(currentPost?.length <=1) {
-          console.log('khlas');
-          
-        }
+  
         setSearchedItem(searchedItem)
       })
  
@@ -171,7 +166,7 @@ return <>
    
 
    {
-    currentPost?.length ==0 || pendingInfo?.length ==0 ? <NoData/> : <>
+ <>
           <tbody>
   
   {

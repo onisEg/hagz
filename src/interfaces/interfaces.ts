@@ -29,12 +29,17 @@ export interface LoginFormData {
     number : number
 }
  export interface topUser  {
-    rank : string,
+    rank? : string,
     image : string,
-    IdNumber : string,
-    playedMatches : number
-    cancelledMatches : number,
-    id:string
+    idNumber : string,
+    playedMatches : string
+    cancelledMatches : string,
+    id:string,
+    upComing:string,
+    name:string,
+    show:boolean,
+    handleClose:()=>void
+
 }
 
  export interface pendingRequestInfo  {
@@ -53,7 +58,8 @@ export interface LoginFormData {
     amountPaid:string,
     date:string,
     playedTimes:string,
-    appProfit:string
+    appProfit:string,
+    invoices:string
 
 }
 

@@ -5,7 +5,6 @@ import logo from '../../assets/images/ahjiz.png'
 import { LuLayoutDashboard } from "react-icons/lu";
 import { MdPendingActions } from "react-icons/md";
 import { PiCourtBasketball } from "react-icons/pi";
-import { HiOutlineUsers } from "react-icons/hi2";
 import { PiUsersThree } from "react-icons/pi";
 import { IoSettingsOutline } from "react-icons/io5";
 import { RiFunctionAddLine } from "react-icons/ri";
@@ -54,10 +53,9 @@ return <>
     <MenuItem icon={<MdPendingActions fontSize={'1.3rem'}/>} component={<NavLink to='pending-request'/>}> Pending Requests <span className='sr-only'>navigate to Pending Requests </span></MenuItem>
   <MenuItem icon={<PiCourtBasketball  fontSize={'1.3rem'} />
 } component={<NavLink to='/court-list'/>}> Manage Courts  <span className='sr-only'>navigate to Manage Courts</span></MenuItem>
-  <MenuItem icon = {<HiOutlineUsers />
-} component={<NavLink to='/'/>}> Court Owners <span className='sr-only'>navigate to categories list</span></MenuItem> 
-  <MenuItem icon={<PiUsersThree   fontSize={'1.3rem'}/>} component={<NavLink to='/'/>}> Users  <span className='sr-only'>navigate to users</span></MenuItem>
-  <MenuItem icon={<IoSettingsOutline   fontSize={'1.3rem'}/>} component={<NavLink to='/'/>}> Settings <span className='sr-only'>navigate to settings</span> </MenuItem>
+
+  <MenuItem icon={<PiUsersThree   fontSize={'1.3rem'}/>} component={<NavLink to='/users-list'/>}> Users  <span className='sr-only'>navigate to users</span></MenuItem>
+  <MenuItem icon={<IoSettingsOutline   fontSize={'1.3rem'}/>} component={<NavLink to='/settings'/>}> Settings <span className='sr-only'>navigate to settings</span> </MenuItem>
   
 
  

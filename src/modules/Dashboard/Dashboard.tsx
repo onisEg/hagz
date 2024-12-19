@@ -5,6 +5,8 @@ import axios from "axios";
 import CourtSlider from "../CourtSlider/CourtSlider";
 import { info, pendingRequestInfo, topUser } from "../../interfaces/interfaces";
 import ViewModal from "../../shareComponents/ViewModal/ViewModal";
+import ViewTopUser from "../../shareComponents/viewTopUser/ViewTopUser";
+
 export default function Dashboard() {
 
 
@@ -15,7 +17,15 @@ export default function Dashboard() {
     const [courtName, setCourtName] = useState('');
     const [courtImage, setCourtImage] = useState('');
     const [show, setShow] = useState(false);
-    const [ownerName, setOwnerName] = useState('');
+    const [showTopUser, setShowTopUser] = useState(false);
+    const [cancelled, setCancelled] = useState('');
+    const [topUserName,setTopUserName] = useState('');
+    const [totalResv,setTotalResv] = useState('');
+    const [totalPlayed,setTotalPlayed] = useState('');
+
+
+
+    const [ownerName,setOwnerName] = useState('');
     const [idNum, setIdNum] = useState('');
 
     const handleShow =(courtName:string,img:string,idNum:string,ownerName:string)=>{
@@ -28,6 +38,24 @@ export default function Dashboard() {
 
         const handleClose = () => {setShow(false);
           }
+
+
+
+
+
+    
+          const handleShowTopUser = (totalResv:string,ownerName:string,img:string,idNumber:string,deletedId:string,totalPlayed:string,cancelled:string) => {
+            setShowTopUser(true);
+            setCourtImage(img)
+            setTotalResv(totalResv)
+            setTopUserName(ownerName)
+            setIdNum(idNumber)
+            setTotalPlayed(totalPlayed)
+            setCancelled(cancelled)
+          }
+
+          const handleCloseTopUser=()=>setShowTopUser(false)
+
     const getUserInfo = ()=> {
         axios.get(`http://localhost:3000/userInfo`).then((resp)=>{
             console.log(resp.data);
@@ -126,14 +154,16 @@ return <>
       </span>
       <div className="user topUsersImage d-flex align-items-center">
           <img src={topUser.image} alt="" className="mx-2" />
-          <p className="my-0">Ahmed</p>
+          <p className="my-0">{topUser.name}</p>
       </div>
       </div>
 
     </td>
-    <td>{topUser.IdNumber}</td>
+    <td>{topUser.idNumber}</td>
     <td>{topUser.playedMatches}</td>
-    <td>{topUser.cancelledMatches}</td>
+    <td> <div className="d-flex gap-2 justify-content-center align-items-center">{topUser.cancelledMatches} <button  onClick={()=>handleShowTopUser(topUser.upComing,topUser.name,topUser.image,topUser.idNumber,topUser.id,topUser.playedMatches,topUser.cancelledMatches)} className="viewTop btn" >View </button></div>
+    </td>
+
   </tr>)
 }
 
@@ -145,7 +175,7 @@ return <>
             <p className=" m-0">Pending Request</p>
             {
 
-                pendingRequests?.map((req:pendingRequestInfo)=>   <div key={req.idNumber} className="request d-flex justify-content-between">
+                pendingRequests?.map((req:pendingRequestInfo)=>   <div key={req.id} className="request d-flex justify-content-between">
                 <div className="topUsersImage d-flex justify-content-between">
                 <span className="me-1">#{req.id}</span>
                 <img src={req.image} alt="aa" />
@@ -157,7 +187,7 @@ return <>
         </div>
 </div>
 </div>
-
+<ViewTopUser show={showTopUser} cancelledMatches={cancelled} idNumber={idNum} handleClose={handleCloseTopUser} image={courtImage} name={topUserName} playedMatches={totalPlayed} upComing={totalResv} id=""/>
 <ViewModal courtImage={courtImage} courtName={courtName} show={show} handleClose={handleClose} idNum={idNum} ownerName={ownerName}/>
 </>
 }
