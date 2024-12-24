@@ -269,48 +269,18 @@
       "status": "Pending",
       "idNumber": "#323996",
       "id": "14"
-    },
-    {
-      "courtName": "Football Aveneu",
-      "image": "./src//assets/images/court2.jpg",
-      "Price": 100,
-      "Description": "Basket ball",
-      "ownerName": "Ahmed Fawzi",
-      "category": "basket ball",
-      "status": "Pending",
-      "idNumber": "#323996",
-      "id": "15"
     }
   ],
   "courtList": [
     {
-      "courtName": "Football Aveneu",
-      "image": "./src//assets/images/court2.jpg",
-      "Price": 20,
-      "Description": "court yard",
-      "ownerName": "Avenue club",
-      "category": "hand ball",
-      "status": "Deactive",
-      "idNumber": "#423996",
-      "id": "2",
-      "registrationNumber": "95432687125",
-      "location": "Alseeb, Oman",
-      "data": {
-        "ownerName": "Avenue clubz",
-        "location": "Alseeb, Oman",
-        "idNumber": "#4239788",
-        "registrationNumber": "95432687125"
-      }
-    },
-    {
-      "courtName": "football aven",
+      "courtName": "football avena",
       "image": "./src//assets/images/court2.jpg",
       "Price": 550,
       "Description": "soccer yard",
       "ownerName": "splashes",
       "category": "basket ball",
-      "status": "Deactive",
-      "idNumber": "#323996",
+      "status": true,
+      "idNumber": "#323996ss",
       "id": "3",
       "registrationNumber": "95432687125",
       "location": "Alseeb, Oman",
@@ -328,7 +298,7 @@
       "Description": "football yard",
       "ownerName": "soccer club",
       "category": "basket ball",
-      "status": "Active",
+      "status": false,
       "idNumber": "#323996",
       "id": "4",
       "registrationNumber": "95432687125",
@@ -425,6 +395,40 @@
       "id": "7",
       "invoices": "Inovice A/2",
       "status": "Rejected"
+    }
+  ],
+  "Add_Admins": [
+    {
+      "userName": "Ahmed",
+      "idNumber": "#423996",
+      "image": "./src//assets/images/person.jpg",
+      "phoneNumber": "+657223568",
+      "role": "Manager",
+      "id": "1"
+    },
+    {
+      "userName": "Ahmed",
+      "idNumber": "#423996",
+      "image": "./src//assets/images/person.jpg",
+      "phoneNumber": "+657223568",
+      "role": "Manager",
+      "id": "2"
+    },
+    {
+      "userName": "Ahmed",
+      "idNumber": "#423996",
+      "image": "./src//assets/images/person.jpg",
+      "phoneNumber": "+657223568",
+      "role": "Manager",
+      "id": "3"
+    },
+    {
+      "userName": "Ahmed",
+      "idNumber": "#423996",
+      "image": "./src//assets/images/person.jpg",
+      "phoneNumber": "+657223568",
+      "role": "Manager",
+      "id": "4"
     }
   ]
 }

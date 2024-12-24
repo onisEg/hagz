@@ -1,8 +1,7 @@
 import Header from "../../shareComponents/Header/Header"
 import pendingImg from '../../assets/images/bro.svg'
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { FaEllipsisH } from "react-icons/fa";
-import axios from "axios";
+import { FaEllipsisH, FaToggleOff } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { pendingRequestInfo } from "../../interfaces/interfaces";
 import SearchInput from "../../shareComponents/SearchInput/SearchInput";
@@ -15,7 +14,10 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { BsImage } from "react-icons/bs";
 import DeleteConfirm from "../../shareComponents/DeleteConfirm/DeleteConfirm";
 import Pagination from "../Pagination/Pagination";
+import { FaToggleOn } from "react-icons/fa";
+
 import { Link } from "react-router-dom";
+import { axiosInstance } from "../../services";
 
 const CourtList = () => {
 
@@ -63,7 +65,7 @@ const CourtList = () => {
  }
 const deletePendingRequest = () => {
 
-  axios.delete(`http://localhost:3000/courtList/${deletedId}`).then((resp)=>{
+  axiosInstance.delete(`/courtList/${deletedId}`).then((resp)=>{
     console.log(resp);
     setShowDelete(false)
    const filtered = pendingInfo?.filter((array)=> array.id.toLocaleString() !== deletedId)
@@ -82,7 +84,22 @@ const deletePendingRequest = () => {
 
 }
 
+const toggleActivate = (id:number,status:string)=>{
+  
+  axiosInstance.patch(`/courtList/${id}`,{
+    "status": !status
+  }).then((resp)=>{
+    console.log(resp);
+    console.log(status);
+    sortedItem('','')
 
+    
+    
+  }).catch((err)=>{
+    console.log(err);
+    
+  })
+}
     const getHighlightedText = (text:string, highlight:string) => {
         if (!highlight.trim()) return text;
     
@@ -103,7 +120,7 @@ const deletePendingRequest = () => {
     
 
     const sortedItem = (searchedItem:string,sorting:string)=> {
-      axios.get(`http://localhost:3000/courtList?_sort=${searchedItem}&${sorting}`,{
+      axiosInstance.get(`/courtList?_sort=${searchedItem}&${sorting}`,{
  
 
       }).then((resp)=>{
@@ -209,7 +226,7 @@ return <>
     <td>{getHighlightedText(info.Description,searchedKeyword)}</td>
     <td>{getHighlightedText(info.ownerName,searchedKeyword)}</td>
     <td>{getHighlightedText(info.category,searchedKeyword)}</td>
-    <td ><span className={info.status == 'Active' ? `pendingStatus bg-success` : info.status == 'Pending' ? `pendingStatus bg-black` : `pendingStatus bg-danger` }>{info.status}</span></td>
+    <td ><span className={info.status == true ? `pendingStatus bg-success` : info.status == 'Pending' ? `pendingStatus bg-black` : `pendingStatus bg-danger` }>{info.status?'Active' : 'Deactive'}</span></td>
     <td >
       <div className="d-flex align-items-center">
       {info.idNumber}    <Dropdown>
@@ -232,6 +249,15 @@ return <>
             <span className="sr-only">click to view</span>
     
 
+          <Dropdown.Item
+          onClick={ ()=>toggleActivate(info.id,info.status)
+          }
+          >
+           {info.status =="Active" ?<FaToggleOff
+              size={'1.2rem'} className="actionsIcon" /> :<FaToggleOn
+              size={'1.2rem'} className="actionsIcon" />} {info.status? 'Deactivate' : 'Activate'}
+            <span className="sr-only">click to toggle user</span>
+          </Dropdown.Item>
           <Dropdown.Item
      onClick={()=>handleDelete(info.id.toLocaleString())} 
           >

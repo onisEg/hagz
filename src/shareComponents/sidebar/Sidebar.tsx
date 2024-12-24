@@ -63,7 +63,7 @@ return <>
 
 
 
-<MenuItem icon={<RiFunctionAddLine  fontSize={'1.3rem'} />} component={<NavLink to='/'/>}> Add admins <span className='sr-only'>navigate to add admins</span> </MenuItem>
+<MenuItem icon={<RiFunctionAddLine  fontSize={'1.3rem'} />} component={<NavLink to='/add-admins'/>}> Add admins <span className='sr-only'>navigate to add admins</span> </MenuItem>
 
 
     </div>

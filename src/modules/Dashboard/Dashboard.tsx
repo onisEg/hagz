@@ -1,11 +1,11 @@
 import Header from "../../shareComponents/Header/Header";
 import dashboardImg from '../../assets/images/amico.png'
 import { useEffect, useState } from "react";
-import axios from "axios";
 import CourtSlider from "../CourtSlider/CourtSlider";
 import { info, pendingRequestInfo, topUser } from "../../interfaces/interfaces";
 import ViewModal from "../../shareComponents/ViewModal/ViewModal";
 import ViewTopUser from "../../shareComponents/viewTopUser/ViewTopUser";
+import { axiosInstance } from "../../services";
 
 export default function Dashboard() {
 
@@ -57,7 +57,7 @@ export default function Dashboard() {
           const handleCloseTopUser=()=>setShowTopUser(false)
 
     const getUserInfo = ()=> {
-        axios.get(`http://localhost:3000/userInfo`).then((resp)=>{
+        axiosInstance.get(`/userInfo`).then((resp)=>{
             console.log(resp.data);
             setUserInfo(resp.data)
             
@@ -68,7 +68,7 @@ export default function Dashboard() {
     }
 
     const getTopUsers=()=>{
-        axios.get(`http://localhost:3000/topUsers`).then((resp)=>{
+        axiosInstance.get(`/topUsers`).then((resp)=>{
             console.log(resp.data);
             setTopUsers(resp.data)
             
@@ -79,7 +79,7 @@ export default function Dashboard() {
 
     }
     const getPendingRequests=()=>{
-        axios.get(`http://localhost:3000/pendingTableInfo`).then((resp)=>{
+        axiosInstance.get(`/pendingTableInfo`).then((resp)=>{
             console.log(resp.data);
             setPendingRequests(resp.data)
             
@@ -187,7 +187,7 @@ return <>
         </div>
 </div>
 </div>
-<ViewTopUser show={showTopUser} cancelledMatches={cancelled} idNumber={idNum} handleClose={handleCloseTopUser} image={courtImage} name={topUserName} playedMatches={totalPlayed} upComing={totalResv} id=""/>
+<ViewTopUser  show={showTopUser} cancelledMatches={cancelled} idNumber={idNum} handleClose={handleCloseTopUser} image={courtImage} name={topUserName} playedMatches={totalPlayed} upComing={totalResv} id={5}/>
 <ViewModal courtImage={courtImage} courtName={courtName} show={show} handleClose={handleClose} idNum={idNum} ownerName={ownerName}/>
 </>
 }

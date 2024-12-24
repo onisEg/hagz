@@ -13,6 +13,8 @@ import CourtDetails from "./modules/CourtDetails/CourtDetails";
 import SearcContextProvider from "./Context/SearchContext";
 import Users from "./modules/UsersList/Users";
 import Settings from "./modules/Settings/Settings";
+import AddAdmins from "./modules/AddAdmins/AddAdmins";
+import AddAdminForm from "./modules/AddAdminForm/AddAdminForm";
 
 export default function App() {
 
@@ -57,6 +59,12 @@ export default function App() {
         },
         {
           path:'court-details/:id' , element : <CourtDetails/>
+        },
+        {
+          path:'add-admins' , element : <AddAdmins/>
+        },
+        {
+          path:'add-admins-form' , element : <AddAdminForm/>
         },
       ]
     }

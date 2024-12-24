@@ -20,11 +20,50 @@ import Pagination from './../Pagination/Pagination';
 import { CourtDet, pendingRequestInfo } from "../../interfaces/interfaces"
 import { GiProfit } from "react-icons/gi";
 
+import { useCalendarApp, ScheduleXCalendar } from '@schedule-x/react'
+import {
+  createViewDay,
+  createViewMonthAgenda,
+  createViewMonthGrid,
+  createViewWeek,
+} from '@schedule-x/calendar'
+import { createDragAndDropPlugin } from '@schedule-x/drag-and-drop'
+import { createEventModalPlugin } from '@schedule-x/event-modal'
 
+import { createEventsServicePlugin } from '@schedule-x/events-service'
+ 
+import '@schedule-x/theme-default/dist/index.css'
 
 const CourtDetails = () => {
 
 
+  const eventsService = useState(() => createEventsServicePlugin())[0]
+ 
+  const calendar = useCalendarApp({
+    views: [ createViewWeek(), createViewMonthGrid(),createViewDay(),createViewMonthAgenda()],
+    events: [
+      {
+        id: '1',
+        title: 'Federico Stucchi',
+        start: '2025-01-01 00:00',
+        end: '2025-01-01 02:00',
+        description:'this my cool description'
+      },
+      {
+        id: '2',
+        title: 'Federico Stucchi',
+        start: '2025-01-01 04:00',
+        end: '2025-01-01 06:00',
+      },
+    ],
+    selectedDate : '2025-01-01'
+    ,
+    plugins: [eventsService,createDragAndDropPlugin(),createEventModalPlugin()]
+  })
+ 
+  useEffect(() => {
+    eventsService.getAll()
+  }, [])
 
   const navigate = useNavigate()
 
@@ -35,6 +74,7 @@ const CourtDetails = () => {
 
   useEffect(()=>{
     getCourtDetails()
+    sortedItem('','','invoices')
   },[])
   const myParams=useParams()
   const id = myParams.id
@@ -42,7 +82,6 @@ const CourtDetails = () => {
   const getCourtDetails =()=>{
     axios.get(`http://localhost:3000/courtList/${id}`).then((resp)=>{
       console.log(resp.data);
-
       setCourtDetails(resp?.data)
     }).catch((error)=>{
       console.log(error);
@@ -127,10 +166,10 @@ const CourtDetails = () => {
 <div className="courtInfo border rounded w-75">
 <ul className="nav align-items-center nav-pills mb-3  myTabs justify-content-between" id="pills-tab" role="tablist">
   <li className="nav-item" role="presentation">
-    <button className="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Schedule</button>
+    <button className="nav-link " id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Schedule</button>
   </li>
   <li className="nav-item" role="presentation">
-    <button onClick={()=>{   sortedItem('','','courtHistory')}} className="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Court Details</button>
+    <button onClick={()=>{   sortedItem('','','courtHistory')}} className="nav-link active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Court Details</button>
   </li>
   <li className="nav-item" role="presentation">
     <button onClick={()=>{   sortedItem('','','courtHistory')}} className="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">History</button>
@@ -140,8 +179,14 @@ const CourtDetails = () => {
   </li>
 </ul>
 <div className="tab-content" id="pills-tabContent">
-  <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">test</div>
-  <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+  <div className="tab-pane fade " id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+
+  <div>
+      <ScheduleXCalendar calendarApp={calendar} />
+    </div>
+
+  </div>
+  <div className="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
 
   <div>
   <form onSubmit={handleSubmit(onSubmitHandler)}>

@@ -2,7 +2,6 @@ import Header from "../../shareComponents/Header/Header"
 import pendingImg from '../../assets/images/rafiki.svg'
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { FaEllipsisH } from "react-icons/fa";
-import axios from "axios";
 import { ReactNode, useContext, useEffect, useState } from "react";
 import { pendingRequestInfo } from '../../interfaces/interfaces';
 import SearchInput from "../../shareComponents/SearchInput/SearchInput";
@@ -15,6 +14,7 @@ import DeleteConfirm from "../../shareComponents/DeleteConfirm/DeleteConfirm";
 import Pagination from "../Pagination/Pagination";
 import ViewModal from "../../shareComponents/ViewModal/ViewModal";
 import { searchContext } from "../../Context/SearchContext";
+import { axiosInstance } from "../../services";
 
 
 export interface searchCont {
@@ -34,10 +34,15 @@ export interface searchCont {
   getHighlightedText:(param:string,param2:string)=>ReactNode
 
 }
+
+
 const PendingRequest = () => {
+  const [searchedItem, setSearchedItem] = useState('')
+  const [sort, setSort] = useState('')
+
 
   const sortedItem = (searchedItem:string,sorting:string)=> {
-    axios.get(`http://localhost:3000/pendingTableInfo?_sort=${searchedItem}&${sorting}`,{
+    axiosInstance.get(`/pendingTableInfo?_sort=${searchedItem}&${sorting}`,{
 
 
     }).then((resp)=>{
@@ -57,9 +62,17 @@ const PendingRequest = () => {
 
     
   }
+  const sortingFunction = (sorting:string) =>{
+    sortedItem(searchedItem,sorting)
+    setSort(sorting)
+    console.log("searched",searchedItem);
+    
+    console.log(sorting);
+    
+  
+   }
 
-
-  const {pendingInfo,postsPerPage,currentPost,sortingFunction,setSearch,filteredItem,currentPage,searchedKeyword,sort,setPendingInfo,setFilteredItem,setSearchedItem,setCurrentPage,getHighlightedText} = useContext<searchCont>(searchContext)
+  const {pendingInfo,postsPerPage,currentPost,setSearch,filteredItem,currentPage,searchedKeyword,setPendingInfo,setFilteredItem,setCurrentPage,getHighlightedText} = useContext<searchCont>(searchContext)
 
   
 
@@ -100,7 +113,7 @@ const PendingRequest = () => {
 
 const deletePendingRequest = () => {
 
-  axios.delete(`http://localhost:3000/pendingTableInfo/${deletedId}`).then((resp)=>{
+  axiosInstance.delete(`/pendingTableInfo/${deletedId}`).then((resp)=>{
     console.log(resp);
     setShowDelete(false)
    const filtered = pendingInfo?.filter((array)=> array.id.toLocaleString() !== deletedId)
